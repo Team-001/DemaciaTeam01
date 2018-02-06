@@ -12,7 +12,4 @@ public class UUIDUtil {
                 .toLowerCase()
                 .replace("-","");
     }
-    public static boolean isEmpty(String str){
-        return str==null|| str.trim().isEmpty();
-    }
 }

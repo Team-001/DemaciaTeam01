@@ -13,6 +13,7 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <link href="../../css/demo.css" rel="stylesheet" type="text/css"/>
     <script src="../../scripts/boot.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../../js/regular.js"></script>
 
     <title>登录页面</title>
 
@@ -58,7 +59,7 @@
 <div id="loginForm" style="border-radius: 30px">
 
     <%--修改提交地址--%>
-    <form id="form1" action="#" method="post">
+    <form id="form1" action="/selectStaff"  method="post">
 
         <table id="loginTable" style="border-radius: 20px">
             <tr id="top">
@@ -71,7 +72,7 @@
                     <label for="loginTable">帐号：</label>
                 </td>
                 <td>
-                    <input name="username" errorMode="none"
+                    <input name="name" errorMode="none"
                            onvalidation="onUserNameValidation"
                            class="mini-textbox" required="true"
                            requiredErrorText="帐号不能为空"/>
@@ -93,7 +94,7 @@
             <tr>
 
                 <td colspan="3" style="text-align: center;">
-                    <input value="登录" type="button"
+                    <input value="登录" type="submit"
                            onclick="submitForm()"
                            style="width: 200px;height: 35px;font-size: 20px;color: #77542F;
                  background-color:#ECF5DC "/>
@@ -118,7 +119,9 @@
         //提交数据
         var data = form.getData();
         var json = mini.encode(data);
-        alert("提交成功");
+        console.log(json);
+//        alert("提交成功");
+        location.href="/selectStaff";
     }
 
     //////////////////////////////////////////
