@@ -40,7 +40,7 @@
         }
         #bg{
             background: linear-gradient(#c0e7ff, #cfe4ff, #86b0eb, #b2caff,#c0e7ff);
-            border-top-right-radius: 50px;
+
         }
 
         .errorText
@@ -56,12 +56,12 @@
 <div id="formbackground" style="position:absolute; width:100%; height:100%; z-index:-1">
     <img src="../../imgs/home.png" height="100%" width="100%"/>
 </div>
-<div id="loginForm" style="border-radius: 30px">
+<div id="loginForm">
 
     <%--修改提交地址--%>
     <form id="form1" action="/selectStaff"  method="post">
 
-        <table id="loginTable" style="border-radius: 20px">
+        <table id="loginTable" >
             <tr id="top">
                 <td><img src="../../imgs/logo.png" height="20px" style="border-top-left-radius: 20px"></td>
                 <td id="bg" colspan="2"></td>
@@ -77,16 +77,20 @@
                            class="mini-textbox" required="true"
                            requiredErrorText="帐号不能为空"/>
                 </td>
-                <td id="username_error" class="errorText" style="font-size: 2px"></td>
+                <td id="username_error" class="errorText" style="font-size: 12px"></td>
             </tr>
             <tr>
                 <td>
                     <label for="loginTable">密码：</label>
                 </td>
                 <td>
-                    <input name="pwd" errorMode="none" onvalidation="onPwdValidation" class="mini-password" required="true" vtype="minLength:5" minLengthErrorText="密码不能少于5个字符"/>
+                    <input name="pwd"
+                           errorMode="none"
+                           onvalidation="onPwdValidation"
+                           class="mini-password" required="true" vtype="minLength:5"
+                           minLengthErrorText="密码不能少于5个字符"/>
                 </td>
-                <td id="pwd_error" class="errorText" style="font-size: 2px"></td>
+                <td id="pwd_error" class="errorText" style="font-size: 12px"></td>
             </tr>
             <tr style="text-align: center;font-size:15px">
                 <td colspan="3"><input id="rememberPwd" name="rememberPwd" type="checkbox">记住密码</td>

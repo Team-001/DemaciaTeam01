@@ -1,0 +1,14 @@
+[
+
+	{ id: "user", text: "🌐 个人中心",},
+	{ id: "userPlatform", pid: "user", text: "🔘个人工作平台", url: "../RightBody_Personal.jsp" },
+
+	{ id: "right", text: "🌐 综合管理",},
+    { id: "management", pid: "right", text: "🔘综合查询", url: "../RightBody_Manage.jsp" },
+
+	{ id: "science", text: "🌐 科研项目管理"},
+    { id: "review", pid: "science", text: "🔘科研项目申报与评审", url: "../RightBody_Science.jsp" },
+    { id: "contract", pid: "science", text: "🔘科研项目合同推荐申报", url: "../RightBody_Contract.jsp" },
+    { id: "change", pid: "science", text: "🔘项目成果与计划调整申请", url: "../RightBody_Science.jsp" },
+    { id: "ext", pid: "science", text: "🔘承接外部科技项目申报", url: "../RightBody_Science.jsp" },
+]
