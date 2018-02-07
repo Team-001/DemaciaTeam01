@@ -14,4 +14,9 @@ public class MainController {
     public String index(){
         return "index";
     }
+
+    @RequestMapping("/sele")
+    public String sele() {
+        return "frontPage";
+    }
 }

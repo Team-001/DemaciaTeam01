@@ -18,6 +18,7 @@
 
     <style type="text/css">
         .table1 {
+            border: 1px solid #C1DEE7;
             width: 100%;
             border-collapse: collapse;
             border: 1px solid #C1DEE7;
@@ -25,8 +26,6 @@
         }
 
         td {
-
-            border: 1px solid #C1DEE7;
             border-collapse: collapse;
             padding: 3px;
             height: 20px;
