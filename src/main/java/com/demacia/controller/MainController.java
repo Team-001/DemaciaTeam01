@@ -19,26 +19,45 @@ public class MainController {
     private StaffService staffService;
 
 
-
-    @RequestMapping(value = {"","/","/index"})
-    public String index(){
+    @RequestMapping(value = {"", "/", "/index"})
+    public String index() {
         return "index";
     }
 
 
     @RequestMapping("/selectStaff")
-    public String selectStaff(String name,String pwd){
-        String pwd1 = staffService.selectStaff(name);
-        if (pwd1.equals(pwd)){
-            return "home";
-        }else {
+    public String selectStaff(String name, String pwd) {
+        if (name != null && pwd != null) {
+
+            String pwd1 = staffService.selectStaff(name);
+            if (pwd1.equals(pwd)) {
+                return "frontPage";
+            } else {
+                return "index";
+            }
+        } else {
             return "index";
         }
     }
+
     @RequestMapping("/sele")
-    @ResponseBody
-    public String sele(){
-        return "xl";
+    public String sele() {
+        return "frontPage";
     }
+
+    @RequestMapping("/contract")
+    public String contract(){
+        return "RightBody_Contract";
+    }
+    @RequestMapping("/personal")
+    public String personal(){
+        return "RightBody_Personal";
+    }
+
+    @RequestMapping("/science")
+    public String science(){
+        return "RightBody_Science";
+    }
+
 
 }

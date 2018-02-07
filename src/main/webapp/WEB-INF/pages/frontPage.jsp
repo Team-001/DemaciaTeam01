@@ -11,8 +11,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-    <link href="css/demo.css" rel="stylesheet" type="text/css"/>
-    <script src="scripts/boot.js" type="text/javascript"></script>
+    <link href="../../css/demo.css" rel="stylesheet" type="text/css"/>
+    <script src="../../scripts/boot.js" type="text/javascript"></script>
 
     <style type="text/css">
         table,td{
@@ -31,9 +31,9 @@
 <div id="layout1" class="mini-layout" style="width:100%;height:100%"  borderStyle="border:solid 1px #aaa;">
     <div region="north" showheader="false" height="50%" showSplitIcon="true" style="position: absolute">
         <div>
-            <img src="imgs/head.png" style="width: 100%;height:100%;z-index: 0">
+            <img src="../../imgs/head.png" style="width: 100%;height:100%;z-index: 0">
 
-            <img src="imgs/person.png" style="position: absolute;top: 3px;left: 55%; z-index: 1">
+            <img src="../../imgs/person.png" style="position: absolute;top: 3px;left: 55%; z-index: 1">
             &nbsp;<span style="tab-size: 18px;position: absolute;top: 2px;left: 58%; z-index: 1">当前用户:${sessionScope.student.sname}</span>
             &nbsp;&nbsp;<span style="tab-size: 18px;position: absolute;top: 2px;left: 68%; z-index: 1">❓<a href="">系统帮助</a></span>
             &nbsp;&nbsp;<span style="tab-size: 18px;position: absolute;top: 2px;left: 78%; z-index: 1">⭕️<a href="">安全退出</a></span>

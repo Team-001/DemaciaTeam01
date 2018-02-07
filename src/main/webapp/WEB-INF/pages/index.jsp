@@ -59,7 +59,7 @@
 <div id="loginForm">
 
     <%--修改提交地址--%>
-    <form id="form1" action="/selectStaff"  method="post">
+    <form id="form1" action="/sele"  method="post">
 
         <table id="loginTable" >
             <tr id="top">
