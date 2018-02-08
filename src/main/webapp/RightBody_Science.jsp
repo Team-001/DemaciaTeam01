@@ -152,15 +152,15 @@
                         <table class="table1">
                             <tr>
                                 <td style="width:120px;background-color:#e9f6fe;text-align: right">总预算 <font color="red">※</font></td>
-                                <td><input style="width: 100%;" type="text" class="mini-textarea"/></td>
+                                <td><input style="width: 100%;" vtype="float" required="true" class="mini-textarea" /></td>
                                 <td style="width:120px;background-color:#e9f6fe;text-align: right">公司经费</td>
-                                <td><input style="width: 100%" class="mini-textarea"/></td>
+                                <td><input style="width: 100%" vtype="float" required="true"  class="mini-textarea"/></td>
                             </tr>
                             <tr>
                                 <td style="width:120px;background-color:#e9f6fe;text-align: right">外部支持经费</td>
-                                <td><input style="width: 100%" class="mini-textarea"/></td>
+                                <td><input style="width: 100%" vtype="float" required="true"  class="mini-textarea"/></td>
                                 <td style="width:120px;background-color:#e9f6fe;text-align: right">国家经费</td>
-                                <td><input style="width: 100%" class="mini-textarea"/></td>
+                                <td><input style="width: 100%" vtype="float" required="true"  class="mini-textarea"/></td>
                             </tr>
                         </table>
                     </div>
