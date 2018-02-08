@@ -80,16 +80,16 @@
                                     <input id="btnEdit1" style="width: 70%"
                                            class="mini-buttonedit"
                                            allowInput="false"
-                                           onbuttonclick="onStudentButtonEdit"
-                                           name="sid" textName="sname"/>
+                                           onbuttonclick="onStaffButtonEdit"
+                                           name="id" textName="name"/>
                                 </td>
                                 <td style="width:80px">所属部门</td>
                                 <td style="text-align: left">
                                     <input id="btnEdit2" style="width: 70%"
                                            class="mini-buttonedit"
                                            allowInput="false"
-                                           onbuttonclick="onClazzButtonEdit"
-                                           name="cid" textName="cname"/>
+                                           onbuttonclick="onDepButtonEdit"
+                                           name="id" textName="name"/>
                                 </td>
                             </tr>
 
@@ -166,16 +166,16 @@
                                     <input id="btnEdit3" style="width: 70%"
                                            class="mini-buttonedit"
                                            allowInput="false"
-                                           onbuttonclick="onStudentButtonEdit"
-                                           name="sid" textName="sname"/>
+                                           onbuttonclick="onStaffButtonEdit"
+                                           name="id" textName="name"/>
                                 </td>
                                 <td style="width:80px">所属部门</td>
                                 <td style="text-align: left">
                                     <input id="btnEdit4" style="width: 70%"
                                            class="mini-buttonedit"
                                            allowInput="false"
-                                           onbuttonclick="onClazzButtonEdit"
-                                           name="cid" textName="cname"/>
+                                           onbuttonclick="onDepButtonEdit"
+                                           name="id" textName="name"/>
                                 </td>
                             </tr>
 
@@ -243,6 +243,50 @@
     }
     function deal() {
 
+    }
+    function onStaffButtonEdit() {
+        var btnEdit = this;
+        mini.open({
+            url:"/staffTable",
+            title: "选择列表",
+            width: 650,
+            height: 380,
+            ondestroy: function (action) {
+                if (action == "ok") {
+                    var iframe = this.getIFrameEl();
+                    var data = iframe.contentWindow.GetData();
+                    data = mini.clone(data);
+                    if (data) {
+                        console.log(data.id+"---"+data.name);
+                        btnEdit.setValue(data.id);
+                        btnEdit.setText(data.name);
+                    }
+                }
+
+            }
+        });
+    }
+    function onDepButtonEdit() {
+        var btnEdit = this;
+        mini.open({
+            url:"/depTable",
+            title: "选择列表",
+            width: 650,
+            height: 380,
+            ondestroy: function (action) {
+                if (action == "ok") {
+                    var iframe = this.getIFrameEl();
+                    var data = iframe.contentWindow.GetData();
+                    data = mini.clone(data);
+                    if (data) {
+                        console.log(data.id+"---"+data.name);
+                        btnEdit.setValue(data.id);
+                        btnEdit.setText(data.name);
+                    }
+                }
+
+            }
+        });
     }
 
 

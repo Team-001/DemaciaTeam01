@@ -18,6 +18,7 @@
 
     <style type="text/css">
         .table1 {
+            border: 1px solid #C1DEE7;
             width: 100%;
             border-collapse: collapse;
             border: 1px solid #C1DEE7;
@@ -25,8 +26,6 @@
         }
 
         td {
-
-            border: 1px solid #C1DEE7;
             border-collapse: collapse;
             padding: 3px;
             height: 20px;
@@ -291,7 +290,7 @@
         //加载mini组件 后面的get方法才好用
         var btnEdit = this;
         mini.open({
-            url: "page/SelectGridWindow.html",
+            url: "page/staff_table.jsp",
             title: "选择班级",
             width: 650,
             height: 380,
