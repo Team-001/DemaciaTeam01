@@ -25,7 +25,6 @@
 
         td {
             text-align: center;
-            border: 1px solid #C1DEE7;
             border-collapse: collapse;
             padding: 3px;
             height: 20px;
@@ -46,6 +45,7 @@
             border: 1px solid #C1DEE7;
             font-size: 12px;
         }
+
     </style>
 </head>
 <body>
@@ -77,7 +77,7 @@
                     </tr>
                     <tr>
                         <td style="background-color: #ecf6f9;width:100px">合同起日期 <font color="red">※</font></td>
-                        <td colspan="2" style="text-align: left">
+                        <td colspan="2" style="text-align: left;border: 0">
                             <input id="date1" style="width: 100%" class="mini-datepicker"/>
                         </td>
                         <td style="background-color: #ecf6f9;width:100px">合同止日期 <font color="red">※</font></td>

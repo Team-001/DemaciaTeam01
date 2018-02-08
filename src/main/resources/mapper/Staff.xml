@@ -3,12 +3,49 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.demacia.mapper.StaffDao">
+    <resultMap id="staffMap" type="com.demacia.domain.Staff">
+        <id property="id" column="staff_id"/>
+        <result property="name" column="staff_name"/>
+        <result property="email" column="staff_email"/>
+        <result property="username" column="staff_username"/>
+        <result property="pwd" column="staff_pwd"/>
+        <association property="department" resultMap="depMap"/>
+    </resultMap>
+    <resultMap id="depMap" type="com.demacia.domain.Department">
+        <id property="id" column="dep_id"/>
+        <result property="name" column="dep_name"/>
+        <result property="chiefId" column="chief_id"/>
+    </resultMap>
+    <sql id="staffCols">
+        team01.yj_staff.staff_id,
+        team01.yj_staff.staff_name,
+        team01.yj_staff.staff_email
+    </sql>
 
-    <select id="selectStaff" resultType="java.lang.String" parameterType="java.lang.String">
+    <select id="selectStaff" resultType="java.lang.String" parameterType="com.demacia.utils.StaffAndDepartment">
         SELECT
         team01.yj_staff.staff_pwd
         FROM team01.yj_staff
-        WHERE team01.yj_staff.staff_name=#{VALUE}
+        WHERE team01.yj_staff.staff_name=#{name}
+    </select>
+    <select id="selectAllStaff" resultMap="staffMap" parameterType="com.demacia.utils.StaffAndDepartment">
+        SELECT
+        <include refid="staffCols"/>
+        FROM team01.yj_staff
+        <where>
+            <if test="name!=null and name!=''">
+                AND staff_name LIKE '%${name}%'
+        </if>
+        </where>
+        limit #{pageIndex},#{pageSize}
+    </select>
+    <select id="getTotal" resultType="java.lang.Integer" parameterType="com.demacia.utils.StaffAndDepartment">
+        SELECT COUNT(staff_id) FROM team01.yj_staff
+        <where>
+            <if test="name!=null and name!=''">
+                AND staff_name LIKE '%${name}%'
+            </if>
+        </where>
     </select>
 
 </mapper>

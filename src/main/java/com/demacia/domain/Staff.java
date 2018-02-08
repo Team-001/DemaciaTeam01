@@ -7,6 +7,7 @@ public class Staff {
 
     private int id;
     private String name,email,username,pwd;
+    private Department department;
 
     public Staff(String name, String username) {
         this.name = name;
@@ -74,5 +75,13 @@ public class Staff {
 
     public void setPwd(String pwd) {
         this.pwd = pwd;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
     }
 }

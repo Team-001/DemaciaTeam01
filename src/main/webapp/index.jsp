@@ -11,8 +11,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-    <link href="../../css/demo.css" rel="stylesheet" type="text/css"/>
-    <script src="../../scripts/boot.js" type="text/javascript"></script>
+    <link href="css/demo.css" rel="stylesheet" type="text/css"/>
+    <script src="scripts/boot.js" type="text/javascript"></script>
     <script type="text/javascript" src="../../js/regular.js"></script>
 
     <title>登录页面</title>
@@ -54,7 +54,7 @@
 <body>
 
 <div id="formbackground" style="position:absolute; width:100%; height:100%; z-index:-1">
-    <img src="../../imgs/home.png" height="100%" width="100%"/>
+    <img src="imgs/home.png" height="100%" width="100%"/>
 </div>
 <div id="loginForm">
 
@@ -63,7 +63,7 @@
 
         <table id="loginTable" >
             <tr id="top">
-                <td><img src="../../imgs/logo.png" height="20px" style="border-top-left-radius: 20px"></td>
+                <td><img src="imgs/logo.png" height="20px" style="border-top-left-radius: 20px"></td>
                 <td id="bg" colspan="2"></td>
             </tr>
 
@@ -72,7 +72,7 @@
                     <label for="loginTable">帐号：</label>
                 </td>
                 <td>
-                    <input name="name" errorMode="none"
+                    <input name="username" errorMode="none"
                            onvalidation="onUserNameValidation"
                            class="mini-textbox" required="true"
                            requiredErrorText="帐号不能为空"/>
@@ -87,8 +87,8 @@
                     <input name="pwd"
                            errorMode="none"
                            onvalidation="onPwdValidation"
-                           class="mini-password" required="true" vtype="minLength:5"
-                           minLengthErrorText="密码不能少于5个字符"/>
+                           class="mini-password" required="true" vtype="minLength:3"
+                           minLengthErrorText="密码不能少于3个字符"/>
                 </td>
                 <td id="pwd_error" class="errorText" style="font-size: 12px"></td>
             </tr>
@@ -98,10 +98,10 @@
             <tr>
 
                 <td colspan="3" style="text-align: center;">
-                    <input value="登录" type="submit"
+                    <input id="login" value="登录" type="button"
                            onclick="submitForm()"
                            style="width: 200px;height: 35px;font-size: 20px;color: #77542F;
-                 background-color:#ECF5DC "/>
+                 background-color:#ECF5DC " onenter="onLoginEnter"/>
                 </td>
 
             </tr>
@@ -125,7 +125,7 @@
         var json = mini.encode(data);
         console.log(json);
 //        alert("提交成功");
-        location.href="/selectStaff";
+        location.href="/sele";
     }
 
     //////////////////////////////////////////
@@ -141,6 +141,9 @@
     }
     function onPwdValidation(e) {
         updateError(e);
+    }
+    function onLoginEnter() {
+        submitForm();
     }
 </script>
 </body>
