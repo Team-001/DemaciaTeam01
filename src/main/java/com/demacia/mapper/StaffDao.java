@@ -9,7 +9,7 @@ import java.util.List;
  * Created by songshiwen on 18/2/5.
  */
 public interface StaffDao {
-    String selectStaff(String name);
+    String selectStaff(String username);
     List<Staff> selectAllStaff(StaffAndDepartment staffAndDepartment);
     Integer getTotal(StaffAndDepartment staffAndDepartment);
 }
