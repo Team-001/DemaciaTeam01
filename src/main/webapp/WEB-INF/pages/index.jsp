@@ -58,7 +58,7 @@
 <div id="loginForm">
 
     <%--修改提交地址--%>
-    <form id="form1" action="#" method="post">
+    <form id="form1" action="/selectStaff" method="post">
 
         <table id="loginTable" >
             <tr id="top">
@@ -86,8 +86,8 @@
                     <input name="pwd"
                            errorMode="none"
                            onvalidation="onPwdValidation"
-                           class="mini-password" required="true" vtype="minLength:5"
-                           minLengthErrorText="密码不能少于5个字符"/>
+                           class="mini-password" required="true" vtype="minLength:3"
+                           minLengthErrorText="密码不能少于3个字符"/>
                 </td>
                 <td id="pwd_error" class="errorText" style="font-size: 12px"></td>
             </tr>
@@ -97,7 +97,7 @@
             <tr>
 
                 <td colspan="3" style="text-align: center;">
-                    <input value="登录" type="button"
+                    <input value="登录" type="submit"
                            onclick="submitForm()"
                            style="width: 200px;height: 35px;font-size: 20px;color: #77542F;
                  background-color:#ECF5DC "/>

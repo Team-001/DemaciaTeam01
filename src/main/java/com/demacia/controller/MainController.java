@@ -35,57 +35,60 @@ public class MainController {
     }
 
 
-
-//    @RequestMapping("/selectStaff")
-//    public String selectStaff(String name, String pwd) {
-//        if (name != null && pwd != null) {
-//
-//            String pwd1 = staffService.selectStaff(name);
-//            if (pwd1.equals(pwd)) {
-//                return "frontPage";
-//            } else {
-//                return "index";
-//            }
-//        } else {
-//            return "index";
-//        }
-//    }
+    @RequestMapping("/selectStaff")
+    public String selectStaff(String username, String pwd) {
+        System.out.println(username);
+        System.out.println(pwd);
+        if (username != null && pwd != null) {
+            String pwd1 = staffService.selectStaff(username);
+            System.out.println(pwd1);
+            if (pwd.equals(pwd1)) {
+                return "frontPage";
+            } else {
+                return "index";
+            }
+        } else {
+            return "index";
+        }
+    }
 
 
     @RequestMapping("/contract")
-    public String contract(){
+    public String contract() {
         return "RightBody_Contract";
     }
+
     @RequestMapping("/personal")
-    public String personal(){
+    public String personal() {
         return "RightBody_Personal";
     }
 
     @RequestMapping("/science")
-    public String science(){
+    public String science() {
         return "RightBody_Science";
     }
 
     @RequestMapping("/staffTable")
-    public String staffTable(){
+    public String staffTable() {
         return "staff_table";
     }
+
     @RequestMapping("/depTable")
-    public String depTable(){
+    public String depTable() {
         return "department_table";
     }
 
     @ResponseBody
     @RequestMapping("/spiltPageStaff")
-    public BaseResult<Staff> spiltPageStaff(int pageIndex,int pageSize,String name){
-        BaseResult<Staff> staffBaseResult = staffService.spiltPageStaff(pageIndex*pageSize,pageSize,name);
+    public BaseResult<Staff> spiltPageStaff(int pageIndex, int pageSize, String name) {
+        BaseResult<Staff> staffBaseResult = staffService.spiltPageStaff(pageIndex * pageSize, pageSize, name);
         return staffBaseResult;
     }
 
     @ResponseBody
     @RequestMapping("/spiltPageDep")
-    public BaseResult<Department> spiltPageDep(int pageIndex,int pageSize,String name){
-        BaseResult<Department> departmentBaseResult = depService.selectDep(name,pageIndex*pageSize,pageSize);
+    public BaseResult<Department> spiltPageDep(int pageIndex, int pageSize, String name) {
+        BaseResult<Department> departmentBaseResult = depService.selectDep(name, pageIndex * pageSize, pageSize);
         return departmentBaseResult;
     }
 

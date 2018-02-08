@@ -22,11 +22,11 @@
         team01.yj_staff.staff_email
     </sql>
 
-    <select id="selectStaff" resultType="java.lang.String" parameterType="com.demacia.utils.StaffAndDepartment">
+    <select id="selectStaff" resultType="java.lang.String" parameterType="java.lang.String">
         SELECT
         team01.yj_staff.staff_pwd
         FROM team01.yj_staff
-        WHERE team01.yj_staff.staff_name=#{name}
+        WHERE team01.yj_staff.staff_username=#{VALUE}
     </select>
     <select id="selectAllStaff" resultMap="staffMap" parameterType="com.demacia.utils.StaffAndDepartment">
         SELECT
