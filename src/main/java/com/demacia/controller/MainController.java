@@ -50,10 +50,6 @@ public class MainController {
 //        }
 //    }
 
-    @RequestMapping("/sele")
-    public String sele() {
-        return "frontPage";
-    }
 
     @RequestMapping("/contract")
     public String contract(){
