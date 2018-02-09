@@ -29,11 +29,6 @@ public class MainController {
         return "index";
     }
 
-    @RequestMapping("/sele")
-    public String sele() {
-        return "frontPage";
-    }
-
 
     @RequestMapping("/selectStaff")
     public String selectStaff(String username, String pwd) {
