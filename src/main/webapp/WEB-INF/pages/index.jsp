@@ -86,8 +86,8 @@
                     <input name="pwd"
                            errorMode="none"
                            onvalidation="onPwdValidation"
-                           class="mini-password" required="true" vtype="minLength:5"
-                           minLengthErrorText="密码不能少于5个字符"/>
+                           class="mini-password" required="true" vtype="minLength:3"
+                           minLengthErrorText="密码不能少于3个字符"/>
                 </td>
                 <td id="pwd_error" class="errorText" style="font-size: 12px"></td>
             </tr>
