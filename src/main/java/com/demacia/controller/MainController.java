@@ -43,22 +43,6 @@ public class MainController {
     }
 
 
-//    @RequestMapping("/selectStaff")
-//    public String selectStaff(String name, String pwd) {
-//        if (name != null && pwd != null) {
-//
-//            String pwd1 = staffService.selectStaff(name);
-//            if (pwd1.equals(pwd)) {
-//                return "frontPage";
-//            } else {
-//                return "index";
-//            }
-//        } else {
-//            return "index";
-//        }
-//    }
-
-
     @RequestMapping("/contract")
     public String contract(){
         return "RightBody_Contract";
