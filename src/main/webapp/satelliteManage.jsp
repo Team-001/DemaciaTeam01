@@ -57,19 +57,19 @@
 <body>
 <table cellpadding="1" cellspacing="2" class="table1">
     <tr>
-        <td class="trTitle" colspan="9">🚩当前位置: 综合管理 >> 流程查询</td>
+        <td class="trTitle" colspan="6">🚩当前位置: 综合管理 >> 卫星库管理人管理</td>
     </tr>
     <tr>
-        <td class="trTitle" colspan="9">
-            <div id="panel0" class="mini-panel" title="⬇️查询条件" style="width:100%;height:102px;"
+        <td class="trTitle" colspan="6">
+            <div id="panel0" class="mini-panel" title="⬇️查询条件" style="width:100%;height:72px;"
                  allowResize="true" collapseOnTitleClick="true">
                 <table class="table1">
                     <tr>
-                        <td style="width:80px">申请时间</td>
+                        <td style="width:80px">卫星库名称</td>
                         <td colspan="2" style="text-align: left;border: 0">
-                            <input id="date1" style="width: 80%" class="mini-datepicker"/>
+                            <input type="text" style="width:80%;">
                         </td>
-                        <td style="width:80px">申请人</td>
+                        <td style="width:80px">管理人员</td>
                         <td colspan="2" style="text-align: left">
                             <input id="btnEdit0" style="width: 80%"
                                    class="mini-buttonedit"
@@ -77,50 +77,25 @@
                                    onbuttonclick="onStaffButtonEdit"
                                    name="id" textName="name"/>
                         </td>
-                        <td style="width:80px">关键字</td>
-                        <td colspan="2" style="text-align: left">
-                            <input type="text" style="width: 80%;height: 25px" class="mini-textarea">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="width:80px">流程类型</td>
-                        <td colspan="2" style="text-align: left">
-                            <input id="combobox1" class="mini-combobox" style="width:80%;" textField="text" valueField="id"
-                                   url="text/process.txt"  showNullItem="false" required="true" allowInput="false"
-                                   onvalidation="onComboValidation"/>
-                        </td>
-                        <td style="width:80px">所属部门</td>
-                        <td colspan="2" style="text-align: left">
-                            <input id="btnEdit2" style="width: 80%"
-                                   class="mini-buttonedit"
-                                   allowInput="false"
-                                   onbuttonclick="onDepButtonEdit"
-                                   name="id" textName="name"/>
-                        </td>
-                        <td style="width:80px">是否可以打印</td>
-                        <td colspan="2" style="text-align: left">
-                            <input id="combobox2" class="mini-combobox" style="width:80%;" textField="text" valueField="id"
-                                   url="text/yesOrNo.txt"  showNullItem="false" required="true" allowInput="false"
-                                   onvalidation="onComboValidation"/>
-                        </td>
                     </tr>
                 </table>
             </div>
         </td>
     </tr>
     <tr>
-        <td class="trTitle" colspan="9"><button style="float: right;margin-right: 4%">🔍查询</button></td>
+        <td class="trTitle" colspan="6">
+            <button style="float: right">⛔️删除</button>
+            <button style="float: right">➕新增</button>
+            <button style="float: right">🔍查询</button >
+        </td>
     </tr>
     <table class="table2" style="border: 1px solid;border-collapse: collapse">
         <tr>
             <td style="width:30px;border: 1px solid #C1DEE7;"><input type="checkbox"></td>
-            <td style="border: 1px solid #C1DEE7">流程编号</td>
-            <td style="border: 1px solid #C1DEE7">流程名称</td>
-            <td style="border: 1px solid #C1DEE7">所属部门</td>
-            <td style="border: 1px solid #C1DEE7">当前环节</td>
-            <td style="width: 100px;border: 1px solid #C1DEE7">提报人</td>
-            <td style="width: 50px;border: 1px solid #C1DEE7">是否可以打印</td>
-            <td style="width: 160px;border: 1px solid #C1DEE7">操作</td>
+            <td style="border: 1px solid #C1DEE7">卫星库</td>
+            <td style="border: 1px solid #C1DEE7">管理人员</td>
+            <td style="border: 1px solid #C1DEE7">创建日期</td>
+            <td style="border: 1px solid #C1DEE7">是否有效</td>
         </tr>
         <tr>
             <td style="border: 1px solid #C1DEE7;"><input type="checkbox"></td>
@@ -128,12 +103,9 @@
             <td style="border: 1px solid #C1DEE7;">1</td>
             <td style="border: 1px solid #C1DEE7;">1</td>
             <td style="border: 1px solid #C1DEE7;">1</td>
-            <td style="border: 1px solid #C1DEE7;">1</td>
-            <td style="border: 1px solid #C1DEE7;">1</td>
-            <td style="border: 1px solid #C1DEE7;"><button onclick="deal()">📝办理</button>&nbsp;<button>🖨打印</button></td>
         </tr>
         <tr>
-            <td colspan="8" style="height:30px;">
+            <td colspan="6" style="height:30px;">
                 <div class="mini-pager" style="width:98%;height:100%;background:#f0f3f7;border:solid 1px #ccc;    "
                      totalCount="${sessionScope.pageBean.totalPage} " onpagechanged="onPageChanged" sizeList="[5,10,20]"
                      showPageSize="true" showPageIndex="true" showPageInfo="true"

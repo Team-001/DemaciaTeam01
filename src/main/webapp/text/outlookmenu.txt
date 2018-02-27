@@ -5,10 +5,16 @@
 
 	{ id: "right", text: "🌐 综合管理",},
     { id: "management", pid: "right", text: "🔘综合查询", url: "../RightBody_Manage.jsp" },
+    { id: "satelliteMge", pid: "right", text: "🔘卫星库管理人管理", url: "../satelliteManage.jsp" },
+    { id: "rayIns", pid: "right", text: "🔘射线探伤人员管理", url: "../rayInspection.jsp" },
+    { id: "factory", pid: "right", text: "🔘厂房管理", url: "../factoryManage.jsp" },
+    { id: "workTeam", pid: "right", text: "🔘机组管理", url: "../workTeamManage.jsp" },
 
 	{ id: "science", text: "🌐 科研项目管理"},
     { id: "review", pid: "science", text: "🔘科研项目申报与评审", url: "../RightBody_Science.jsp" },
     { id: "contract", pid: "science", text: "🔘科研项目合同推荐申报", url: "../RightBody_Contract.jsp" },
-    { id: "change", pid: "science", text: "🔘项目成果与计划调整申请", url: "../RightBody_Science.jsp" },
-    { id: "ext", pid: "science", text: "🔘承接外部科技项目申报", url: "../RightBody_Science.jsp" },
+
+    { id: "satellite", text: "🌐 卫星库管理",},
+        { id: "permission", pid: "satellite", text: "🔘卫星库授权", url: "" },
+        { id: "additional", pid: "satellite", text: "🔘补文申请", url: "" }
 ]

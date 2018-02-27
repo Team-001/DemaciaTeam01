@@ -58,25 +58,27 @@
     <div title="待办任务" >
         <table cellpadding="1" cellspacing="2" class="table1">
             <tr>
-                <td class="trTitle" colspan="8">🚩当前位置: 个人工作平台 >> 待办任务</td>
+                <td class="trTitle" colspan="8">🚩当前位置: 个人工作台 >> 待办任务</td>
             </tr>
             <tr>
                 <td class="trTitle" colspan="8">
-                    <div id="panel0" class="mini-panel" title="⬇️查询条件" style="width:100%;height:102px;"
+                    <div id="panel0" class="mini-panel" title="⬇️查询条件" style="width:100%;height:135px;"
                          allowResize="true" collapseOnTitleClick="true">
                         <table class="table1">
                             <tr>
-                                <td style="width:10%">申请时间</td>
+                                <td style="width:80px">申请时间</td>
                                 <td colspan="2" style="text-align: left;border: 0">
                                     <input id="date1" style="width: 70%" class="mini-datepicker"/>
                                 </td>
-                                <td style="width:10%">关键字</td>
+                                <td style="width:80px">流程名称</td>
                                 <td colspan="2" style="text-align: left">
-                                    <input type="text" style="width: 70%;height: 25px" class="mini-textarea">
+                                    <input id="combobox1" class="mini-combobox" style="width:80%;" textField="text" valueField="id"
+                                           url="text/process.txt"  showNullItem="false" required="true" allowInput="false"
+                                           onvalidation="onComboValidation"/>
                                 </td>
                             </tr>
                             <tr>
-                                <td style="width:10%">申请人</td>
+                                <td style="width:80px">申请人</td>
                                 <td colspan="2" style="text-align: left">
                                     <input id="btnEdit1" style="width: 70%"
                                            class="mini-buttonedit"
@@ -84,9 +86,15 @@
                                            onbuttonclick="onStaffButtonEdit"
                                            name="id" textName="name"/>
                                 </td>
-                                <td style="width:10%">所属部门</td>
-                                <td style="text-align: left">
-                                    <input id="btnEdit2" style="width: 70%"
+                                <td style="width:80px">关键字</td>
+                                <td colspan="2" style="text-align: left">
+                                    <input type="text" style="width: 80%;height: 25px" class="mini-textarea">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width:80px">所属部门</td>
+                                <td colspan="2" style="text-align: left">
+                                    <input id="btnEdit2" style="width: 80%"
                                            class="mini-buttonedit"
                                            allowInput="false"
                                            onbuttonclick="onDepButtonEdit"
@@ -144,54 +152,9 @@
     <div title="已办任务" >
         <table cellpadding="1" cellspacing="2" class="table1">
             <tr>
-                <td class="trTitle" colspan="8">🚩当前位置: 个人工作平台 >> 已办任务</td>
-            </tr>
-            <tr>
-                <td class="trTitle" colspan="8">
-                    <div id="panel1" class="mini-panel" title="⬇️查询条件" style="width:100%;height:102px"
-                         allowResize="true" collapseOnTitleClick="true">
-                        <table class="table1">
-                            <tr>
-                                <td style="width:10%">申请时间</td>
-                                <td colspan="2" style="text-align: left">
-                                    <input id="date2" style="width: 70%" class="mini-datepicker"/>
-                                </td>
-                                <td style="width:10%">关键字</td>
-                                <td colspan="2" style="text-align: left">
-                                    <input type="text" style="width: 70%;height: 25px" class="mini-textarea">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="width:10%">申请人</td>
-                                <td colspan="2" style="text-align: left">
-                                    <input id="btnEdit3" style="width: 70%"
-                                           class="mini-buttonedit"
-                                           allowInput="false"
-                                           onbuttonclick="onStaffButtonEdit"
-                                           name="id" textName="name"/>
-                                </td>
-                                <td style="width:10%">所属部门</td>
-                                <td style="text-align: left">
-                                    <input id="btnEdit4" style="width: 70%"
-                                           class="mini-buttonedit"
-                                           allowInput="false"
-                                           onbuttonclick="onDepButtonEdit"
-                                           name="id" textName="name"/>
-                                </td>
-                            </tr>
-
-                        </table>
-
-
-                    </div>
-
-
-                </td>
+                <td class="trTitle" colspan="8">🚩当前位置: 个人工作台 >> 已办任务</td>
             </tr>
 
-            <tr>
-                <td class="trTitle" colspan="8"><button style="float: right;margin-right: 4%">🔍查询</button></td>
-            </tr>
             <table class="table2" style="border: 1px solid;border-collapse: collapse">
                 <tr>
                     <td style="width:30px;"><input type="checkbox"></td>
@@ -211,7 +174,27 @@
                     <td>1</td>
                     <td>1</td>
                     <td>1</td>
-                    <td><button onclick="deal()">📝办理</button></td>
+                    <td><button onclick="deal()">👁查看</button></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td><button onclick="deal()">👁查看</button></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td><button onclick="deal()">👁查看</button></td>
                 </tr>
                 <tr>
                     <td colspan="8" style="height:30px;">
@@ -243,13 +226,8 @@
         tabs.setTabAlign(value);
     }
     function deal() {
-        mini.open({
-            url:"contractPersonal.jsp",
-            title:"个人工作台",
-            with:500,
-            height:400
-        })
-    };
+
+    }
     function onStaffButtonEdit() {
         var btnEdit = this;
         mini.open({

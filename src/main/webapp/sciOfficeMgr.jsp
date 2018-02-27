@@ -33,6 +33,7 @@
         }
 
         .trTitle {
+            background-image: linear-gradient(to top, #c3e6ff,#FFFFFF);
             background-color: #cae5f8;
             color: #427dc0;
             text-align: left;

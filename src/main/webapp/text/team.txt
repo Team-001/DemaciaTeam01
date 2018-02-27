@@ -1,0 +1,10 @@
+﻿﻿[
+    { "id": "team1", "text": "机组A" },
+    { "id": "team2", "text": "机组B" },
+    { "id": "team3", "text": "机组C" },
+    { "id": "team4", "text": "机组D" },
+    { "id": "team5", "text": "机组E" },
+    { "id": "team6", "text": "机组F" },
+    { "id": "team7", "text": "机组G" }
+
+]

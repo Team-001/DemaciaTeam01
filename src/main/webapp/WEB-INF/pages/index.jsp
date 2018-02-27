@@ -58,7 +58,7 @@
 <div id="loginForm">
 
     <%--修改提交地址--%>
-    <form id="form1" action="#" method="post">
+    <form id="form1" action="/selectStaff" method="post">
 
         <table id="loginTable" >
             <tr id="top">
@@ -97,7 +97,7 @@
             <tr>
 
                 <td colspan="3" style="text-align: center;">
-                    <input value="登录" type="button"
+                    <input value="登录" type="submit"
                            onclick="submitForm()"
                            style="width: 200px;height: 35px;font-size: 20px;color: #77542F;
                  background-color:#ECF5DC "/>
@@ -122,7 +122,7 @@
         //提交数据
         var data = form.getData();
         var json = mini.encode(data);
-        alert("提交成功");
+        location = "frontPage.jsp"
     }
 
     //////////////////////////////////////////

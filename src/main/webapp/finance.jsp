@@ -17,7 +17,6 @@
     <script src="js/jquery.cookie.js" type="text/javascript"></script>
     <style type="text/css">
         .table1 {
-        ;
             width: 100%;
             border-collapse: collapse;
             border: 1px solid #C1DEE7;
@@ -33,6 +32,7 @@
         }
 
         .trTitle {
+            background-image: linear-gradient(to top, #c3e6ff,#FFFFFF);
             background-color: #cae5f8;
             color: #427dc0;
             text-align: left;

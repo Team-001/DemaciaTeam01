@@ -17,6 +17,7 @@
     <script src="js/jquery.cookie.js" type="text/javascript"></script>
     <style type="text/css">
         .table1 {
+        ;
             width: 100%;
             border-collapse: collapse;
             border: 1px solid #C1DEE7;
@@ -43,6 +44,9 @@
             padding: 3px;
             height: 20px;
             border: 1px solid #C1DEE7;
+        }
+        body{
+            margin:0;padding:0;border:0;width:100%;height:100%;overflow:scroll;
         }
     </style>
 </head>
@@ -96,48 +100,22 @@
                 </div>
             </td>
         </tr>
+
         <tr>
             <td class="trTitle" colspan="4">
-                <div id="panel3" class="mini-panel" title="⬇️评审信息" style="width:100%;height:135px;"
+                <div id="panel3" class="mini-panel" title="⬇️审批意见" style="width:100%;height:150px;"
                      allowResize="true" collapseOnTitleClick="true">
                     <table class="table1">
                         <tr>
-                            <td style="width:120px;height: 60px; background-color:#e9f6fe">评审结果</td>
-                            <td colspan="3"><input style="width: 100%;height: 60px; overflow: scroll" class="mini-textarea"/></td>
-                        </tr>
-                        <tr>
-                            <td style="background-color:#e9f6fe;text-align: right">立项报告书<font color="red">※</font></td>
-                            <td id="upload" style="text-align: left;border: 0">
-                                <div>
-                                    <input class="mini-htmlfile" name="Fdata" id="file1" style="width:100%;"/>
-                                </div>
-                            </td>
+                            <td style="width:120px;height: 100px; background-color:#e9f6fe">审批意见</td>
+                            <td><input style="width: 100%;height: 100px; overflow: scroll" class="mini-textarea"/></td>
+                            <td style="width:120px;height: 100px; background-color:#e9f6fe">常用词条</td>
+                            <td><input style="width: 100%;height: 100px; overflow: scroll" class="mini-textarea"/></td>
                         </tr>
                     </table>
                 </div>
             </td>
         </tr>
-
-        <tr>
-            <td class="trTitle" colspan="4">
-                <div id="panel4" class="mini-panel" title="⬇️流程信息" style="width:100%;height:65px;"
-                     allowResize="true" collapseOnTitleClick="true">
-                    <table class="table1">
-                        <tr>
-                            <td style="width: 100px;background-color:#e9f6fe;text-align: left">审批组长</td>
-                            <td style="width: 40%;border: 0">
-                                <input id="btnEdit1" style="width: 100%"
-                                       class="mini-buttonedit"
-                                       onbuttonclick="onStudentButtonEdit"
-                                       allowInput="false"
-                                       name="sid" textName="sname"/>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </td>
-        </tr>
-
         <tr>
             <td colspan="4" style="background-color: #ededed; text-align: right">
                 <button>⛔️驳回</button> &nbsp;&nbsp;

@@ -134,10 +134,9 @@
                                 <input type="checkbox">生产性文件
                                 <input type="checkbox">设计文件
                                 <input type="checkbox">计算机软件
-                                <input type="checkbox" onclick="other(this);">其他
-                                <input style="position: absolute;left: 75%;top: 3px; display:none;" type="text" id="Checkbox5"/>
+                                <input type="checkbox" onclick="energyTypeCheck(this);">其他
+                                <input style="display:none; height: 120%; float: right" name="energyType" type="text" id="Checkbox5"/>
                             </div>
-
                         </td>
 
                     </tr>
@@ -158,11 +157,9 @@
                         <td colspan="7"><input style="width: 100%; " class="mini-textarea"/></td>
                     </tr>
                     <tr>
-                        <td style="background-color:#e9f6fe;text-align: right">运作说明 <font color="red">※</font></td>
+                        <td style="background-color:#e9f6fe;text-align: right">附件 <font color="red">※</font></td>
                         <td id="upload" colspan="2" style="text-align: left">
-                            <div>
-                                <input class="mini-htmlfile" name="Fdata" id="file1" style="width:30%;"/>
-                            </div>
+                            <a href="">运作说明.doc</a>
                         </td>
                     </tr>
                 </table>
@@ -172,18 +169,14 @@
 
     <tr>
         <td class="trTitle" colspan="8">
-            <div id="panel3" class="mini-panel" title="⬇️流程信息" style="width:100%;height:70px;"
+            <div id="panel6" class="mini-panel" title="⬇️审批意见" style="width:100%;height:150px;"
                  allowResize="true" collapseOnTitleClick="true">
                 <table class="table1">
                     <tr>
-                        <td style="width: 100px;background-color:#e9f6fe;text-align: right">技术部经理</td>
-                        <td style="text-align: left">
-                            <input id="btnEdit1" style="width: 30%"
-                                   class="mini-buttonedit"
-                                   onbuttonclick="onStudentButtonEdit"
-                                   allowInput="false"
-                                   name="sid" textName="sname"/>
-                        </td>
+                        <td style="width:120px;height: 100px; background-color:#e9f6fe">审批意见</td>
+                        <td><input style="width: 100%;height: 100px; overflow: scroll" class="mini-textarea"/></td>
+                        <td style="width:120px;height: 100px; background-color:#e9f6fe">常用词条</td>
+                        <td><input style="width: 100%;height: 100px; overflow: scroll" class="mini-textarea"/></td>
                     </tr>
                 </table>
             </div>
@@ -191,24 +184,15 @@
     </tr>
 
     <tr>
-        <td class="trTitle" colspan="8"><button style="position: absolute; right: 1%;bottom: 0; z-index: 1">提交</button></td>
+        <td colspan="8" style="background-color: #ededed; text-align: right">
+            <button>⛔️不通过</button> &nbsp;&nbsp;
+            <button>👍通过</button>
+        </td>
     </tr>
 </table>
 
 </form>
 
 
-<script>
-
-    mini.parse();
-    function other (chk) {
-        var Checkbox5 = document.getElementById('Checkbox5');
-        if (chk.checked) {
-            Checkbox5.style.display = 'block';
-        } else {
-            Checkbox5.style.display = 'none';
-        }
-    }
-</script>
 </body>
 </html>

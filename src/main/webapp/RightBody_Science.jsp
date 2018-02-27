@@ -21,7 +21,18 @@
             border: 1px solid #C1DEE7;
             width: 100%;
             border-collapse: collapse;
+            font-size: 12px;
+        }
+        #table2 {
             border: 1px solid #C1DEE7;
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+        #table3 {
+            border: 1px solid #C1DEE7;
+            width: 100%;
+            border-collapse: collapse;
             font-size: 12px;
         }
 
@@ -34,6 +45,7 @@
         }
 
         .trTitle {
+            background-image: linear-gradient(to top, #c3e6ff,#FFFFFF);
             background-color: #cae5f8;
             color: #427dc0;
             text-align: left;
@@ -117,7 +129,7 @@
 
             <tr>
                 <td class="trTitle" colspan="4">
-                    <div id="panel3" class="mini-panel" title="⬇️其他信息" style="width:100%;height:312px;"
+                    <div id="panel3" class="mini-panel" title="⬇️其他信息" style="width:100%;height:318px;"
                          allowResize="true" collapseOnTitleClick="true">
                         <table class="table1">
                             <tr>
@@ -205,7 +217,7 @@
                                         <input type="checkbox">设计文件
                                         <input type="checkbox">计算机软件
                                         <input type="checkbox" onclick="energyTypeCheck(this)">其他
-                                        <input style="display:none; height: 120%; float: right" name="energyType" type="text" id="Checkbox5"/>
+                                        <input style="display:none; position: absolute;right: 20%;top: 4px" type="text" id="Checkbox5"/>
                                     </div>
                                 </td>
 
@@ -334,7 +346,9 @@
     }
 
     function energyTypeCheck (chk) {
-        var Checkbox5 = document.getElementById('Checkbox5');
+        var table = document.getElementById('table3');
+        var table1 = table.getElementById('table2');
+        var Checkbox5 = table1.getElementById('Checkbox5');
         if (chk.checked) {
             Checkbox5.style.display = 'block';
         } else {

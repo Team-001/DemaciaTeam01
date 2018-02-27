@@ -19,8 +19,8 @@ public class StaffServiceImpl implements StaffService {
     private StaffDao staffDao;
 
 
-    public String selectStaff(String name) {
-        return staffDao.selectStaff(name);
+    public String selectPwd(String name) {
+        return staffDao.selectPwd(name);
     }
 
     public BaseResult<Staff> spiltPageStaff(int pageIndex, int pageSize,String name) {

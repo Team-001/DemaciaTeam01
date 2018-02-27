@@ -15,7 +15,7 @@
     </style>
 </head>
 <body>
-<div class="mini-toolbar" style="text-align:center;line-height:30px;" borderStyle="border:0;">
+<div class="mini-toolbar" style="text-align:right;line-height:30px;" borderStyle="border:0;">
     <label >部门名称：</label>
     <input id="key" class="mini-textbox" style="width:150px;" onenter="onKeyEnter"/>
     <a class="mini-button" style="width:60px;" onclick="search()">🔍查询</a>

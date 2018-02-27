@@ -8,6 +8,7 @@ import com.demacia.utils.BaseResult;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
 
@@ -29,26 +30,17 @@ public class MainController {
         return "index";
     }
 
-    @RequestMapping("/sele")
-    public String sele() {
-        return "frontPage";
+
+    @RequestMapping("/selectStaff")
+    public String selectStaff(String username, String pwd) {
+        if ((username != null&& !username.equals("")) && (pwd != null && !pwd.equals(""))) {
+            String pwd1 = staffService.selectPwd(username);
+            if (pwd1.equals(pwd)) {
+                return "frontPage";
+            }
+        }
+        return "index";
     }
-
-
-//    @RequestMapping("/selectStaff")
-//    public String selectStaff(String name, String pwd) {
-//        if (name != null && pwd != null) {
-//
-//            String pwd1 = staffService.selectStaff(name);
-//            if (pwd1.equals(pwd)) {
-//                return "frontPage";
-//            } else {
-//                return "index";
-//            }
-//        } else {
-//            return "index";
-//        }
-//    }
 
 
     @RequestMapping("/contract")
