@@ -31,7 +31,7 @@
             <img src=../../imgs/head.png style="width: 100%;height:100%;z-index: 0">
 
             <img src="../../imgs/person.png" style="position: absolute;top: 3px;left: 55%; z-index: 1">
-            &nbsp;<span style="tab-size: 18px;position: absolute;top: 2px;left: 58%; z-index: 1">当前用户:${sessionScope.staff.name}</span>
+            &nbsp;<span style="tab-size: 18px;position: absolute;top: 2px;left: 58%; z-index: 1">当前用户:${name}</span>
             &nbsp;&nbsp;<span style="tab-size: 18px;position: absolute;top: 2px;left: 68%; z-index: 1">❓<a href="">系统帮助</a></span>
             &nbsp;&nbsp;<span style="tab-size: 18px;position: absolute;top: 2px;left: 78%; z-index: 1">⭕️<a href="/index">安全退出</a></span>
             &nbsp;&nbsp;<span style="tab-size: 18px;position: absolute;top: 2px;left: 88%; z-index: 1">♻️<a href="">主题切换</a></span>
@@ -57,7 +57,7 @@
 
     mini.parse();
     var iframe = document.getElementById("mainframe");
-    iframe.src = "RightBody_Personal.jsp";
+    iframe.src = "personal";
 
     function onItemSelect(e) {
         var item = e.item;

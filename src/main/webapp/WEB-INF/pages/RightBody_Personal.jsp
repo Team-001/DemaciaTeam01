@@ -10,10 +10,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="css/demo.css">
+    <link rel="stylesheet" href="../../css/demo.css">
 
-    <script src="scripts/boot.js" type="text/javascript"></script>
-    <script src="js/ajaxfileupload.js" type="text/javascript"></script>
+    <script src="../../scripts/boot.js" type="text/javascript"></script>
+    <script src="../../js/ajaxfileupload.js" type="text/javascript"></script>
     <style>
         .table1 {
             ;
@@ -107,35 +107,26 @@
                 <td class="trTitle" colspan="8"><button style="float: right;margin-right: 4%">🔍查询</button></td>
             </tr>
             <table class="table2" style="border: 1px solid;border-collapse: collapse">
-                <tr>
-                    <td style="width:30px;"><input type="checkbox"></td>
-                    <td>流程编号</td>
-                    <td>流程名称</td>
-                    <td>所属部门</td>
-                    <td>当前环节</td>
-                    <td style="width: 100px">提报人</td>
-                    <td style="width: 150px">提报时间</td>
-                    <td style="width: 80px">操作</td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox"></td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td><button onclick="deal()">📝办理</button></td>
-                </tr>
-                <tr>
-                    <td colspan="8" style="height:30px;">
-                        <div class="mini-pager" style="width:98%;height:100%;background:#f0f3f7;border:solid 1px #ccc;    "
-                             totalCount="${sessionScope.pageBean.totalPage} " onpagechanged="onPageChanged" sizeList="[5,10,20]"
-                             showPageSize="true" showPageIndex="true" showPageInfo="true"
-                             buttons="#buttons">
+                <div class="mini-fit">
+
+                    <div id="grid0" class="mini-datagrid" style="width:100%;height:50%;"
+                         idField="id" allowResize="true"
+                         sizeList="[2,3,5,10]" pageSize="5"
+                         borderStyle="border-left:0;border-right:0;" onrowdblclick="onRowDblClick"
+                    >
+                        <div property="columns" style="text-align: center">
+                            <div field="id" width="30px" headerAlign="center" allowSort="true"><input type="checkbox"></div>
+                            <div field="id" width="150px" headerAlign="center" allowSort="true">流程编号</div>
+                            <div field="name" width="150px" headerAlign="center" allowSort="true">流程名称</div>
+                            <div field="email" width="150px" headerAlign="center" allowSort="true">所属部门</div>
+                            <div field="email" width="150px" headerAlign="center" allowSort="true">当前环节</div>
+                            <div field="email" width="150px" headerAlign="center" allowSort="true">提报人</div>
+                            <div field="email" width="150px" headerAlign="center" allowSort="true">提报时间</div>
+                            <div field="email" width="150px" headerAlign="center" allowSort="true">操作</div>
                         </div>
-                    </td>
-                </tr>
+                    </div>
+
+                </div>
             </table>
 
 
@@ -193,35 +184,26 @@
                 <td class="trTitle" colspan="8"><button style="float: right;margin-right: 4%">🔍查询</button></td>
             </tr>
             <table class="table2" style="border: 1px solid;border-collapse: collapse">
-                <tr>
-                    <td style="width:30px;"><input type="checkbox"></td>
-                    <td>流程编号</td>
-                    <td>流程名称</td>
-                    <td>所属部门</td>
-                    <td>当前环节</td>
-                    <td style="width: 100px">提报人</td>
-                    <td style="width: 150px">提报时间</td>
-                    <td style="width: 80px">操作</td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox"></td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td><button onclick="deal()">📝办理</button></td>
-                </tr>
-                <tr>
-                    <td colspan="8" style="height:30px;">
-                        <div class="mini-pager" style="width:98%;height:100%;background:#f0f3f7;border:solid 1px #ccc;    "
-                             totalCount="${sessionScope.pageBean.totalPage} " onpagechanged="onPageChanged" sizeList="[5,10,20]"
-                             showPageSize="true" showPageIndex="true" showPageInfo="true"
-                             buttons="#buttons">
+                <div class="mini-fit">
+
+                    <div id="grid1" class="mini-datagrid" style="width:100%;height:50%;"
+                         idField="id" allowResize="true"
+                         sizeList="[2,3,5,10]" pageSize="5"
+                         borderStyle="border-left:0;border-right:0;" onrowdblclick="onRowDblClick"
+                    >
+                        <div property="columns" style="text-align: center">
+                            <div field="id" width="30px" headerAlign="center" allowSort="true"><input type="checkbox"></div>
+                            <div field="id" width="150px" headerAlign="center" allowSort="true">流程编号</div>
+                            <div field="name" width="150px" headerAlign="center" allowSort="true">流程名称</div>
+                            <div field="email" width="150px" headerAlign="center" allowSort="true">所属部门</div>
+                            <div field="email" width="150px" headerAlign="center" allowSort="true">当前环节</div>
+                            <div field="email" width="150px" headerAlign="center" allowSort="true">提报人</div>
+                            <div field="email" width="150px" headerAlign="center" allowSort="true">提报时间</div>
+                            <div field="email" width="150px" headerAlign="center" allowSort="true">操作</div>
                         </div>
-                    </td>
-                </tr>
+                    </div>
+
+                </div>
             </table>
 
 
@@ -232,6 +214,14 @@
 
 <script type="text/javascript">
     mini.parse();
+
+    var grid0=mini.get("grid0");
+    grid0.setUrl();
+    grid0.load();
+
+    var grid1=mini.get("grid1");
+    grid1.setUrl();
+    grid1.load();
 
     function onTabPositionChange(value) {
         var tabs = mini.get("tabs1");
@@ -294,6 +284,8 @@
             }
         });
     }
+
+
 
 
 

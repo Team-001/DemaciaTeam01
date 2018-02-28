@@ -36,5 +36,9 @@ public class StaffServiceImpl implements StaffService {
         return staffBaseResult;
     }
 
+    public String selectStaffName(String username) {
+        return staffDao.selectStaffName(username);
+    }
+
 
 }

@@ -122,7 +122,6 @@
         //提交数据
         var data = form.getData();
         var json = mini.encode(data);
-        location = "frontPage.jsp"
     }
 
     //////////////////////////////////////////

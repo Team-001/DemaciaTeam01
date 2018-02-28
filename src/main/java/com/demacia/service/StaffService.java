@@ -10,7 +10,8 @@ import java.util.List;
  * Created by songshiwen on 18/2/5.
  */
 public interface StaffService {
-    String selectPwd(String name);
+    String selectPwd(String username);
     BaseResult<Staff> spiltPageStaff(int pageIndex,int pageSize,String name);
+    String selectStaffName(String username);
 
 }

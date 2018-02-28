@@ -26,7 +26,7 @@
         SELECT
         team01.yj_staff.staff_pwd
         FROM team01.yj_staff
-        WHERE team01.yj_staff.staff_username=#{value}
+        WHERE team01.yj_staff.staff_username=#{VALUE}
     </select>
 
     <select id="selectAllStaff" resultMap="staffMap" parameterType="com.demacia.utils.StaffAndDepartment">
@@ -47,6 +47,12 @@
                 AND staff_name LIKE '%${name}%'
             </if>
         </where>
+    </select>
+
+    <select id="selectStaffName" resultType="java.lang.String" parameterType="java.lang.String">
+        SELECT team01.yj_staff.staff_name
+        FROM team01.yj_staff
+        WHERE team01.yj_staff.staff_username=#{VALUE}
     </select>
 
 </mapper>

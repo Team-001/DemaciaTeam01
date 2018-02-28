@@ -10,11 +10,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="css/demo.css">
+    <link rel="stylesheet" href="../../css/demo.css">
 
-    <script src="scripts/boot.js" type="text/javascript"></script>
-    <script src="js/ajaxfileupload.js" type="text/javascript"></script>
-    <script src="js/jquery.cookie.js" type="text/javascript"></script>
+    <script src="../../scripts/boot.js" type="text/javascript"></script>
+    <script src="../../js/ajaxfileupload.js" type="text/javascript"></script>
+    <script src="../../js/jquery.cookie.js" type="text/javascript"></script>
     <style type="text/css">
         .table1 {
             width: 100%;
