@@ -43,6 +43,8 @@ public class MainController {
             if (pwd1.equals(pwd)){
                 mv.addObject("name",staffName);
                 mv.setViewName("frontPage");
+            }else {
+                mv.setViewName("index");
             }
         }
         return mv;

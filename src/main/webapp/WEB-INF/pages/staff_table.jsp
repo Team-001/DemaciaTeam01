@@ -50,7 +50,6 @@
 
     //动态设置URL
     grid.setUrl("/spiltPageStaff");
-    //也可以动态设置列 grid.setColumns([]);
 
     grid.load();
 

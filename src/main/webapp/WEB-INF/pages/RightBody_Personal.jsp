@@ -13,25 +13,16 @@
     <link rel="stylesheet" href="../../css/demo.css">
 
     <script src="../../scripts/boot.js" type="text/javascript"></script>
-    <script src="../../js/ajaxfileupload.js" type="text/javascript"></script>
+    <%--<script src="../../js/ajaxfileupload.js" type="text/javascript"></script>--%>
     <style>
-        .table1 {
-            ;
-            width: 100%;
-            border-collapse: collapse;
-            border: 1px solid #C1DEE7;
-        }
-        .table2 {
+        .table1,.table2 {
             width: 100%;
             border-collapse: collapse;
             border: 1px solid #C1DEE7;
         }
         td {
             text-align: center;
-            border: 1px solid #C1DEE7;
-            border-collapse: collapse;
             padding: 3px;
-            height: 20px;
             background-color: #ecf6f9;
             font-size: 12px;
         }
@@ -41,14 +32,6 @@
             background-color: #cae5f8;
             color: #427dc0;
             text-align: left;
-        }
-        .table2>td {
-            text-align: center;
-            border-collapse: collapse;
-            padding: 3px;
-            height: 20px;
-            font-size: 12px;
-            border: 1px solid #C1DEE7;
         }
 
     </style>
@@ -66,26 +49,26 @@
                          allowResize="true" collapseOnTitleClick="true">
                         <table class="table1">
                             <tr>
-                                <td style="width:10%">申请时间</td>
-                                <td colspan="2" style="text-align: left;border: 0">
+                                <td style="width:10%;background-color: #ecf6f9">申请时间</td>
+                                <td colspan="2" style="text-align: left;border: 0;background-color: #ecf6f9">
                                     <input id="date1" style="width: 70%" class="mini-datepicker"/>
                                 </td>
-                                <td style="width:10%">关键字</td>
-                                <td colspan="2" style="text-align: left">
+                                <td style="width:10%;background-color: #ecf6f9">关键字</td>
+                                <td colspan="2" style="text-align: left;background-color: #ecf6f9">
                                     <input type="text" style="width: 70%;height: 25px" class="mini-textarea">
                                 </td>
                             </tr>
                             <tr>
-                                <td style="width:10%">申请人</td>
-                                <td colspan="2" style="text-align: left">
+                                <td style="width:10%;background-color: #ecf6f9">申请人</td>
+                                <td colspan="2" style="text-align: left;background-color: #ecf6f9">
                                     <input id="btnEdit1" style="width: 70%"
                                            class="mini-buttonedit"
                                            allowInput="false"
                                            onbuttonclick="onStaffButtonEdit"
                                            name="id" textName="name"/>
                                 </td>
-                                <td style="width:10%">所属部门</td>
-                                <td style="text-align: left">
+                                <td style="width:10%;background-color: #ecf6f9">所属部门</td>
+                                <td style="text-align: left;background-color: #ecf6f9">
                                     <input id="btnEdit2" style="width: 70%"
                                            class="mini-buttonedit"
                                            allowInput="false"
@@ -93,13 +76,8 @@
                                            name="id" textName="name"/>
                                 </td>
                             </tr>
-
                         </table>
-
-
                     </div>
-
-
                 </td>
             </tr>
 
@@ -107,30 +85,38 @@
                 <td class="trTitle" colspan="8"><button style="float: right;margin-right: 4%">🔍查询</button></td>
             </tr>
             <table class="table2" style="border: 1px solid;border-collapse: collapse">
-                <div class="mini-fit">
-
-                    <div id="grid0" class="mini-datagrid" style="width:100%;height:50%;"
-                         idField="id" allowResize="true"
-                         sizeList="[2,3,5,10]" pageSize="5"
-                         borderStyle="border-left:0;border-right:0;" onrowdblclick="onRowDblClick"
-                    >
-                        <div property="columns" style="text-align: center">
-                            <div field="id" width="30px" headerAlign="center" allowSort="true"><input type="checkbox"></div>
-                            <div field="id" width="150px" headerAlign="center" allowSort="true">流程编号</div>
-                            <div field="name" width="150px" headerAlign="center" allowSort="true">流程名称</div>
-                            <div field="email" width="150px" headerAlign="center" allowSort="true">所属部门</div>
-                            <div field="email" width="150px" headerAlign="center" allowSort="true">当前环节</div>
-                            <div field="email" width="150px" headerAlign="center" allowSort="true">提报人</div>
-                            <div field="email" width="150px" headerAlign="center" allowSort="true">提报时间</div>
-                            <div field="email" width="150px" headerAlign="center" allowSort="true">操作</div>
+                <tr>
+                    <td style="width:30px;border: 1px solid #C1DEE7;"><input type="checkbox"></td>
+                    <td style="border: 1px solid #C1DEE7">流程编号</td>
+                    <td style="border: 1px solid #C1DEE7">流程名称</td>
+                    <td style="border: 1px solid #C1DEE7">所属部门</td>
+                    <td style="border: 1px solid #C1DEE7">当前环节</td>
+                    <td style="width: 100px;border: 1px solid #C1DEE7">提报人</td>
+                    <td style="width: 50px;border: 1px solid #C1DEE7">提报时间</td>
+                    <td style="width: 160px;border: 1px solid #C1DEE7">操作</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #C1DEE7;"><input type="checkbox"></td>
+                    <td style="border: 1px solid #C1DEE7;">1</td>
+                    <td style="border: 1px solid #C1DEE7;">1</td>
+                    <td style="border: 1px solid #C1DEE7;">1</td>
+                    <td style="border: 1px solid #C1DEE7;">1</td>
+                    <td style="border: 1px solid #C1DEE7;">1</td>
+                    <td style="border: 1px solid #C1DEE7;">1</td>
+                    <td style="border: 1px solid #C1DEE7;"><button onclick="deal()">📝办理</button>&nbsp;<button>🖨打印</button></td>
+                </tr>
+                <tr>
+                    <td colspan="8" style="height:30px;">
+                        <div class="mini-pager" style="width:98%;height:100%;background:#f0f3f7;border:solid 1px #ccc;    "
+                             totalCount="${sessionScope.pageBean.totalPage} " onpagechanged="onPageChanged" sizeList="[5,10,20]"
+                             showPageSize="true" showPageIndex="true" showPageInfo="true"
+                             buttons="#buttons">
                         </div>
-                    </div>
-
-                </div>
+                    </td>
+                </tr>
             </table>
-
-
         </table>
+
     </div>
     <div title="已办任务" >
         <table cellpadding="1" cellspacing="2" class="table1">
@@ -143,26 +129,26 @@
                          allowResize="true" collapseOnTitleClick="true">
                         <table class="table1">
                             <tr>
-                                <td style="width:10%">申请时间</td>
-                                <td colspan="2" style="text-align: left">
+                                <td style="width:10%;background-color: #ecf6f9">申请时间</td>
+                                <td colspan="2" style="text-align: left;background-color: #ecf6f9">
                                     <input id="date2" style="width: 70%" class="mini-datepicker"/>
                                 </td>
-                                <td style="width:10%">关键字</td>
-                                <td colspan="2" style="text-align: left">
+                                <td style="width:10%;background-color: #ecf6f9">关键字</td>
+                                <td colspan="2" style="text-align: left;background-color: #ecf6f9">
                                     <input type="text" style="width: 70%;height: 25px" class="mini-textarea">
                                 </td>
                             </tr>
                             <tr>
-                                <td style="width:10%">申请人</td>
-                                <td colspan="2" style="text-align: left">
+                                <td style="width:10%;background-color: #ecf6f9">申请人</td>
+                                <td colspan="2" style="text-align: left;background-color: #ecf6f9">
                                     <input id="btnEdit3" style="width: 70%"
                                            class="mini-buttonedit"
                                            allowInput="false"
                                            onbuttonclick="onStaffButtonEdit"
                                            name="id" textName="name"/>
                                 </td>
-                                <td style="width:10%">所属部门</td>
-                                <td style="text-align: left">
+                                <td style="width:10%;background-color: #ecf6f9">所属部门</td>
+                                <td style="text-align: left;background-color: #ecf6f9">
                                     <input id="btnEdit4" style="width: 70%"
                                            class="mini-buttonedit"
                                            allowInput="false"
@@ -172,11 +158,7 @@
                             </tr>
 
                         </table>
-
-
                     </div>
-
-
                 </td>
             </tr>
 
@@ -184,26 +166,35 @@
                 <td class="trTitle" colspan="8"><button style="float: right;margin-right: 4%">🔍查询</button></td>
             </tr>
             <table class="table2" style="border: 1px solid;border-collapse: collapse">
-                <div class="mini-fit">
-
-                    <div id="grid1" class="mini-datagrid" style="width:100%;height:50%;"
-                         idField="id" allowResize="true"
-                         sizeList="[2,3,5,10]" pageSize="5"
-                         borderStyle="border-left:0;border-right:0;" onrowdblclick="onRowDblClick"
-                    >
-                        <div property="columns" style="text-align: center">
-                            <div field="id" width="30px" headerAlign="center" allowSort="true"><input type="checkbox"></div>
-                            <div field="id" width="150px" headerAlign="center" allowSort="true">流程编号</div>
-                            <div field="name" width="150px" headerAlign="center" allowSort="true">流程名称</div>
-                            <div field="email" width="150px" headerAlign="center" allowSort="true">所属部门</div>
-                            <div field="email" width="150px" headerAlign="center" allowSort="true">当前环节</div>
-                            <div field="email" width="150px" headerAlign="center" allowSort="true">提报人</div>
-                            <div field="email" width="150px" headerAlign="center" allowSort="true">提报时间</div>
-                            <div field="email" width="150px" headerAlign="center" allowSort="true">操作</div>
+                <tr>
+                    <td style="width:30px;border: 1px solid #C1DEE7;"><input type="checkbox"></td>
+                    <td style="border: 1px solid #C1DEE7">流程编号</td>
+                    <td style="border: 1px solid #C1DEE7">流程名称</td>
+                    <td style="border: 1px solid #C1DEE7">所属部门</td>
+                    <td style="border: 1px solid #C1DEE7">当前环节</td>
+                    <td style="width: 100px;border: 1px solid #C1DEE7">提报人</td>
+                    <td style="width: 50px;border: 1px solid #C1DEE7">提报时间</td>
+                    <td style="width: 160px;border: 1px solid #C1DEE7">操作</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #C1DEE7;"><input type="checkbox"></td>
+                    <td style="border: 1px solid #C1DEE7;">1</td>
+                    <td style="border: 1px solid #C1DEE7;">1</td>
+                    <td style="border: 1px solid #C1DEE7;">1</td>
+                    <td style="border: 1px solid #C1DEE7;">1</td>
+                    <td style="border: 1px solid #C1DEE7;">1</td>
+                    <td style="border: 1px solid #C1DEE7;">1</td>
+                    <td style="border: 1px solid #C1DEE7;"><button onclick="deal()">📝办理</button>&nbsp;<button>🖨打印</button></td>
+                </tr>
+                <tr>
+                    <td colspan="8" style="height:30px;">
+                        <div class="mini-pager" style="width:98%;height:100%;background:#f0f3f7;border:solid 1px #ccc;    "
+                             totalCount="${sessionScope.pageBean.totalPage} " onpagechanged="onPageChanged" sizeList="[5,10,20]"
+                             showPageSize="true" showPageIndex="true" showPageInfo="true"
+                             buttons="#buttons">
                         </div>
-                    </div>
-
-                </div>
+                    </td>
+                </tr>
             </table>
 
 
