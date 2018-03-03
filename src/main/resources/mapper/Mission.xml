@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demacia.mapper.MissionDao">
+    <sql id="missionCols">
+        mid,
+        mName,
+        department,
+        stage,
+        applicant,
+        applyDate,
+        print
+</sql>
+
+    <select id="selectMission" resultType="com.demacia.domain.Mission" parameterType="com.demacia.utils.MissionUtil">
+        SELECT
+        <include refid="missionCols"/>
+        FROM mission
+        <where>
+            1=1
+            <if test="applyDate !=null and applyDate !=''">
+                AND applyDate = #{applyDate}
+            </if>
+            <if test="mName !=null and mName !=''">
+                AND mName LIKE '%${mName}%'
+            </if>
+            <if test="applicant !=null and applicant !=''">
+                AND applicant = #{applicant}
+            </if>
+            <if test="department !=null and department !=''">
+                AND department = #{department}
+            </if>
+            <if test="print !=null and print !=''">
+                AND print = #{print}
+            </if>
+        </where>
+        limit #{pageIndex},#{pageSize}
+    </select>
+
+    <select id="getTotal" resultType="java.lang.Integer" parameterType="com.demacia.utils.MissionUtil">
+        SELECT COUNT(mid)
+        FROM mission
+        <where>
+            <if test="applyDate !=null and applyDate !=''">
+                AND applyDate = #{applyDate}
+            </if>
+            <if test="mName !=null and mName !=''">
+                AND mName LIKE '%${mName}%'
+            </if>
+            <if test="applicant !=null and applicant !=''">
+                AND applicant = #{applicant}
+            </if>
+            <if test="department !=null and department !=''">
+                AND department = #{department}
+            </if>
+            <if test="print !=null and print !=''">
+                AND print = #{print}
+            </if>
+        </where>
+    </select>
+
+</mapper>

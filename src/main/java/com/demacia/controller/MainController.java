@@ -1,8 +1,10 @@
 package com.demacia.controller;
 
 import com.demacia.domain.Department;
+import com.demacia.domain.Mission;
 import com.demacia.domain.Staff;
 import com.demacia.service.DepService;
+import com.demacia.service.MissionService;
 import com.demacia.service.StaffService;
 import com.demacia.utils.BaseResult;
 import org.springframework.stereotype.Controller;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
+import java.util.Date;
 
 /**
  * Created by songshiwen on 18/2/3.
@@ -23,6 +26,9 @@ public class MainController {
     private StaffService staffService;
     @Resource
     private DepService depService;
+    @Resource
+    private MissionService missionService;
+
 
 
     @RequestMapping(value = {"", "/", "/index"})
@@ -49,6 +55,7 @@ public class MainController {
         }
         return mv;
     }
+
 
     @RequestMapping("/frontPage")
     public String frontPage(){
@@ -118,6 +125,17 @@ public class MainController {
         BaseResult<Department> departmentBaseResult = depService.selectDep(name, pageIndex * pageSize, pageSize);
         return departmentBaseResult;
     }
+
+    @ResponseBody
+    @RequestMapping("/splitMission")
+    public BaseResult<Mission> splitMission1 (int pageIndex, int pageSize, String applyDate,
+                                             String mName, String applicant, String department, String print){
+        BaseResult<Mission> missionBaseResult = missionService.showMission(pageIndex*pageSize,pageSize,applyDate,mName
+        ,applicant,department,print);
+        System.out.println(missionBaseResult);
+        return missionBaseResult;
+    }
+
 
 
 }

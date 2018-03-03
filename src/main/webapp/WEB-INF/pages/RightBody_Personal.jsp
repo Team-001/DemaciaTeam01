@@ -55,7 +55,7 @@
                                 </td>
                                 <td style="width:10%;background-color: #ecf6f9">关键字</td>
                                 <td colspan="2" style="text-align: left;background-color: #ecf6f9">
-                                    <input type="text" style="width: 70%;height: 25px" class="mini-textarea">
+                                    <input id="key1" type="text" style="width: 70%;height: 25px" class="mini-textarea">
                                 </td>
                             </tr>
                             <tr>
@@ -63,7 +63,6 @@
                                 <td colspan="2" style="text-align: left;background-color: #ecf6f9">
                                     <input id="btnEdit1" style="width: 70%"
                                            class="mini-buttonedit"
-                                           allowInput="false"
                                            onbuttonclick="onStaffButtonEdit"
                                            name="id" textName="name"/>
                                 </td>
@@ -71,7 +70,6 @@
                                 <td style="text-align: left;background-color: #ecf6f9">
                                     <input id="btnEdit2" style="width: 70%"
                                            class="mini-buttonedit"
-                                           allowInput="false"
                                            onbuttonclick="onDepButtonEdit"
                                            name="id" textName="name"/>
                                 </td>
@@ -82,40 +80,27 @@
             </tr>
 
             <tr>
-                <td class="trTitle" colspan="8"><button style="float: right;margin-right: 4%">🔍查询</button></td>
+                <td class="trTitle" colspan="8"><button style="float: right;margin-right: 4%" onclick="searchToDo()">🔍查询</button></td>
             </tr>
-            <table class="table2" style="border: 1px solid;border-collapse: collapse">
-                <tr>
-                    <td style="width:30px;border: 1px solid #C1DEE7;"><input type="checkbox"></td>
-                    <td style="border: 1px solid #C1DEE7">流程编号</td>
-                    <td style="border: 1px solid #C1DEE7">流程名称</td>
-                    <td style="border: 1px solid #C1DEE7">所属部门</td>
-                    <td style="border: 1px solid #C1DEE7">当前环节</td>
-                    <td style="width: 100px;border: 1px solid #C1DEE7">提报人</td>
-                    <td style="width: 50px;border: 1px solid #C1DEE7">提报时间</td>
-                    <td style="width: 160px;border: 1px solid #C1DEE7">操作</td>
-                </tr>
-                <tr>
-                    <td style="border: 1px solid #C1DEE7;"><input type="checkbox"></td>
-                    <td style="border: 1px solid #C1DEE7;">1</td>
-                    <td style="border: 1px solid #C1DEE7;">1</td>
-                    <td style="border: 1px solid #C1DEE7;">1</td>
-                    <td style="border: 1px solid #C1DEE7;">1</td>
-                    <td style="border: 1px solid #C1DEE7;">1</td>
-                    <td style="border: 1px solid #C1DEE7;">1</td>
-                    <td style="border: 1px solid #C1DEE7;"><button onclick="deal()">📝办理</button>&nbsp;<button>🖨打印</button></td>
-                </tr>
-                <tr>
-                    <td colspan="8" style="height:30px;">
-                        <div class="mini-pager" style="width:98%;height:100%;background:#f0f3f7;border:solid 1px #ccc;    "
-                             totalCount="${sessionScope.pageBean.totalPage} " onpagechanged="onPageChanged" sizeList="[5,10,20]"
-                             showPageSize="true" showPageIndex="true" showPageInfo="true"
-                             buttons="#buttons">
-                        </div>
-                    </td>
-                </tr>
-            </table>
         </table>
+            <div id="grid0"
+                 class="mini-datagrid"
+                 style="width:100%;height:250px;"
+                 idField="id"
+                 sizeList="[2,5,10]" pageSize="5"
+            >
+                <div property="columns">
+                    <div width="30" renderer="onActionRenderer1" headerAlign="center" align="center"><input type="checkbox"></div>
+                    <div field="mid" width="120" headerAlign="center" align="center">流程编号</div>
+                    <div field="mName" width="150" headerAlign="center" align="center">流程名称</div>
+                    <div field="department" width="100" headerAlign="center" headerAlign="center" align="center">所属部门</div>
+                    <div field="stage"  headerAlign="center" width="100"  align="center">当前环节</div>
+                    <div field="applicant" width="100" headerAlign="center" align="center" decimalPlaces="2" dataType="float">提报人</div>
+                    <div field="applyDate" width="100" headerAlign="center" dateFormat="yyyy-MM-dd" align="center">提报时间</div>
+                    <div width="80" renderer="onActionRenderer2" headerAlign="center" align="center">操作</div>
+                </div>
+            </div>
+
 
     </div>
     <div title="已办任务" >
@@ -135,7 +120,7 @@
                                 </td>
                                 <td style="width:10%;background-color: #ecf6f9">关键字</td>
                                 <td colspan="2" style="text-align: left;background-color: #ecf6f9">
-                                    <input type="text" style="width: 70%;height: 25px" class="mini-textarea">
+                                    <input id="key2" type="text" style="width: 70%;height: 25px" class="mini-textarea">
                                 </td>
                             </tr>
                             <tr>
@@ -143,7 +128,6 @@
                                 <td colspan="2" style="text-align: left;background-color: #ecf6f9">
                                     <input id="btnEdit3" style="width: 70%"
                                            class="mini-buttonedit"
-                                           allowInput="false"
                                            onbuttonclick="onStaffButtonEdit"
                                            name="id" textName="name"/>
                                 </td>
@@ -151,7 +135,6 @@
                                 <td style="text-align: left;background-color: #ecf6f9">
                                     <input id="btnEdit4" style="width: 70%"
                                            class="mini-buttonedit"
-                                           allowInput="false"
                                            onbuttonclick="onDepButtonEdit"
                                            name="id" textName="name"/>
                                 </td>
@@ -163,56 +146,70 @@
             </tr>
 
             <tr>
-                <td class="trTitle" colspan="8"><button style="float: right;margin-right: 4%">🔍查询</button></td>
+                <td class="trTitle" colspan="8"><button style="float: right;margin-right: 4%" onclick="searchDone()">🔍查询</button></td>
             </tr>
-            <table class="table2" style="border: 1px solid;border-collapse: collapse">
-                <tr>
-                    <td style="width:30px;border: 1px solid #C1DEE7;"><input type="checkbox"></td>
-                    <td style="border: 1px solid #C1DEE7">流程编号</td>
-                    <td style="border: 1px solid #C1DEE7">流程名称</td>
-                    <td style="border: 1px solid #C1DEE7">所属部门</td>
-                    <td style="border: 1px solid #C1DEE7">当前环节</td>
-                    <td style="width: 100px;border: 1px solid #C1DEE7">提报人</td>
-                    <td style="width: 50px;border: 1px solid #C1DEE7">提报时间</td>
-                    <td style="width: 160px;border: 1px solid #C1DEE7">操作</td>
-                </tr>
-                <tr>
-                    <td style="border: 1px solid #C1DEE7;"><input type="checkbox"></td>
-                    <td style="border: 1px solid #C1DEE7;">1</td>
-                    <td style="border: 1px solid #C1DEE7;">1</td>
-                    <td style="border: 1px solid #C1DEE7;">1</td>
-                    <td style="border: 1px solid #C1DEE7;">1</td>
-                    <td style="border: 1px solid #C1DEE7;">1</td>
-                    <td style="border: 1px solid #C1DEE7;">1</td>
-                    <td style="border: 1px solid #C1DEE7;"><button onclick="deal()">📝办理</button>&nbsp;<button>🖨打印</button></td>
-                </tr>
-                <tr>
-                    <td colspan="8" style="height:30px;">
-                        <div class="mini-pager" style="width:98%;height:100%;background:#f0f3f7;border:solid 1px #ccc;    "
-                             totalCount="${sessionScope.pageBean.totalPage} " onpagechanged="onPageChanged" sizeList="[5,10,20]"
-                             showPageSize="true" showPageIndex="true" showPageInfo="true"
-                             buttons="#buttons">
-                        </div>
-                    </td>
-                </tr>
-            </table>
-
-
         </table>
+            <div id="grid1"
+                 class="mini-datagrid"
+                 style="width:100%;height:250px;"
+                 idField="id"
+                 sizeList="[2,5,10]" pageSize="5"
+            >
+                <div property="columns">
+                    <div width="30" renderer="onActionRenderer1" headerAlign="center" align="center"><input type="checkbox"></div>
+                    <div field="mid" width="120" headerAlign="center" align="center">流程编号</div>
+                    <div field="mName" width="150" headerAlign="center" align="center">流程名称</div>
+                    <div field="department" width="100" headerAlign="center" headerAlign="center" align="center">所属部门</div>
+                    <div field="stage"  headerAlign="center" width="100"  align="center">当前环节</div>
+                    <div field="applicant" width="100" headerAlign="center" align="center" decimalPlaces="2" dataType="float">提报人</div>
+                    <div field="applyDate" width="100" headerAlign="center" dateFormat="yyyy-MM-dd" align="center">提报时间</div>
+                    <div width="80" renderer="onActionRenderer2" headerAlign="center" align="center">操作</div>
+                </div>
+            </div>
     </div>
 </div>
-
 
 <script type="text/javascript">
     mini.parse();
 
     var grid0=mini.get("grid0");
-    grid0.setUrl();
+    grid0.setUrl("/splitMission");
     grid0.load();
 
     var grid1=mini.get("grid1");
-    grid1.setUrl();
+    grid1.setUrl("/splitMission");
     grid1.load();
+
+    function onActionRenderer1(e) {
+        var grid0 = e.sender;
+        var record = e.record;
+        var s = '<input type="checkbox">';
+        return s;
+    }
+
+    function onActionRenderer2(e) {
+        var grid0 = e.sender;
+        var record = e.record;
+        var s = '<button>✏️办理</button>';
+        return s;
+    }
+
+    function searchToDo() {
+        var key1 = mini.get("date1").getText();
+        var key2 = mini.get("key1").getValue();
+        var key3 = mini.get("btnEdit1").getText();
+        var key4 = mini.get("btnEdit2").getText();
+        grid0.load({ applyDate: key1, mName: key2, applicant: key3, department: key4 });
+    }
+
+    function searchDone() {
+        var key1 = mini.get("date2").getText();
+        var key2 = mini.get("key2").getValue();
+        var key3 = mini.get("btnEdit3").getText();
+        var key4 = mini.get("btnEdit4").getText();
+        grid1.load({ applyDate: key1, mName: key2, applicant: key3, department: key4 });
+
+    }
 
     function onTabPositionChange(value) {
         var tabs = mini.get("tabs1");
@@ -225,10 +222,10 @@
     }
     function deal() {
         mini.open({
-            url:"contractPersonal.jsp",
-            title:"个人工作台",
-            with:500,
-            height:400
+            url:"deptManager.jsp",
+            title:"部门经理审批",
+            width:700,
+            height:500
         })
     };
     function onStaffButtonEdit() {
@@ -275,6 +272,8 @@
             }
         });
     }
+    
+
 
 
 

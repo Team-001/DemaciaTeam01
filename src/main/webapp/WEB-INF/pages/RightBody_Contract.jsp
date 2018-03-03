@@ -124,8 +124,8 @@
                 <table class="table1">
                     <tr>
                         <td style="background-color:#e9f6fe;text-align: right;width:150px;">产品形式</td>
-                        <td colspan="7">
-                            <div style="text-align: left">
+                        <td colspan="7" style="text-align: left;">
+                            <span style="text-align: left;">
                                 &nbsp;&nbsp;&nbsp;
                                 <input type="checkbox">专题报告
                                 <input type="checkbox">技术方案
@@ -135,8 +135,10 @@
                                 <input type="checkbox">设计文件
                                 <input type="checkbox">计算机软件
                                 <input type="checkbox" onclick="other(this);">其他
-                                <input style="position: absolute;left: 75%;top: 3px; display:none;" type="text" id="Checkbox5"/>
-                            </div>
+                                <input style="position: absolute; left: 80%;top: 2px; display:none;" type="text" id="Checkbox5"/>
+                            </span>
+
+
 
                         </td>
 
