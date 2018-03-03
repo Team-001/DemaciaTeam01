@@ -71,36 +71,34 @@
                         </td>
                         <td style="width:80px">申请人</td>
                         <td colspan="2" style="text-align: left">
-                            <input id="btnEdit0" style="width: 80%"
+                            <input id="btnEdit1" style="width: 80%"
                                    class="mini-buttonedit"
-                                   allowInput="false"
                                    onbuttonclick="onStaffButtonEdit"
                                    name="id" textName="name"/>
                         </td>
                         <td style="width:80px">关键字</td>
                         <td colspan="2" style="text-align: left">
-                            <input type="text" style="width: 80%;height: 25px" class="mini-textarea">
+                            <input id="key" type="text" style="width: 80%;height: 25px" class="mini-textarea">
                         </td>
                     </tr>
                     <tr>
                         <td style="width:80px">流程类型</td>
                         <td colspan="2" style="text-align: left">
                             <input id="combobox1" class="mini-combobox" style="width:80%;" textField="text" valueField="id"
-                                   url="text/process.txt"  showNullItem="false" required="true" allowInput="false"
+                                   url="text/process.txt"  showNullItem="true" required="true"
                                    onvalidation="onComboValidation"/>
                         </td>
                         <td style="width:80px">所属部门</td>
                         <td colspan="2" style="text-align: left">
                             <input id="btnEdit2" style="width: 80%"
                                    class="mini-buttonedit"
-                                   allowInput="false"
                                    onbuttonclick="onDepButtonEdit"
                                    name="id" textName="name"/>
                         </td>
                         <td style="width:80px">是否可以打印</td>
                         <td colspan="2" style="text-align: left">
                             <input id="combobox2" class="mini-combobox" style="width:80%;" textField="text" valueField="id"
-                                   url="text/yesOrNo.txt"  showNullItem="false" required="true" allowInput="false"
+                                   url="text/yesOrNo.txt"  showNullItem="true" required="true"
                                    onvalidation="onComboValidation"/>
                         </td>
                     </tr>
@@ -109,46 +107,56 @@
         </td>
     </tr>
     <tr>
-        <td class="trTitle" colspan="9"><button style="float: right;margin-right: 4%">🔍查询</button></td>
+        <td class="trTitle" colspan="9"><button style="float: right;margin-right: 4%" onclick="search()">🔍查询</button></td>
     </tr>
-    <table class="table2" style="border: 1px solid;border-collapse: collapse">
-        <tr>
-            <td style="width:30px;border: 1px solid #C1DEE7;"><input type="checkbox"></td>
-            <td style="border: 1px solid #C1DEE7">流程编号</td>
-            <td style="border: 1px solid #C1DEE7">流程名称</td>
-            <td style="border: 1px solid #C1DEE7">所属部门</td>
-            <td style="border: 1px solid #C1DEE7">当前环节</td>
-            <td style="width: 100px;border: 1px solid #C1DEE7">提报人</td>
-            <td style="width: 50px;border: 1px solid #C1DEE7">是否可以打印</td>
-            <td style="width: 160px;border: 1px solid #C1DEE7">操作</td>
-        </tr>
-        <tr>
-            <td style="border: 1px solid #C1DEE7;"><input type="checkbox"></td>
-            <td style="border: 1px solid #C1DEE7;">1</td>
-            <td style="border: 1px solid #C1DEE7;">1</td>
-            <td style="border: 1px solid #C1DEE7;">1</td>
-            <td style="border: 1px solid #C1DEE7;">1</td>
-            <td style="border: 1px solid #C1DEE7;">1</td>
-            <td style="border: 1px solid #C1DEE7;">1</td>
-            <td style="border: 1px solid #C1DEE7;"><button onclick="deal()">📝办理</button>&nbsp;<button>🖨打印</button></td>
-        </tr>
-        <tr>
-            <td colspan="8" style="height:30px;">
-                <div class="mini-pager" style="width:98%;height:100%;background:#f0f3f7;border:solid 1px #ccc;    "
-                     totalCount="${sessionScope.pageBean.totalPage} " onpagechanged="onPageChanged" sizeList="[5,10,20]"
-                     showPageSize="true" showPageIndex="true" showPageInfo="true"
-                     buttons="#buttons">
-                </div>
-            </td>
-        </tr>
-    </table>
-
-
 </table>
+<div id="grid0"
+     class="mini-datagrid"
+     style="width:100%;height:250px;"
+     idField="id"
+     sizeList="[2,5,10]" pageSize="5">
+    <div property="columns">
+        <div width="30" renderer="onActionRenderer1" headerAlign="center" align="center"><input type="checkbox"></div>
+        <div field="mid" width="120" headerAlign="center" align="center">流程编号</div>
+        <div field="mName" width="150" headerAlign="center" align="center">流程名称</div>
+        <div field="department" width="100" headerAlign="center" headerAlign="center" align="center">所属部门</div>
+        <div field="stage"  headerAlign="center" width="100"  align="center">当前环节</div>
+        <div field="applicant" width="100" headerAlign="center" align="center" decimalPlaces="2" dataType="float">提报人</div>
+        <div field="print" width="80" headerAlign="center" align="center">是否可以打印</div>
+        <div width="130" renderer="onActionRenderer2" headerAlign="center" align="center">操作</div>
+    </div>
+</div>
 
 
 <script type="text/javascript">
     mini.parse();
+
+    var grid0=mini.get("grid0");
+    grid0.setUrl("/splitMission");
+    grid0.load();
+
+    function search() {
+        var key1 = mini.get("date1").getText();
+        var key2 = mini.get("key").getValue();
+        var key3 = mini.get("btnEdit1").getText();
+        var key4 = mini.get("btnEdit2").getText();
+        var key5 = mini.get("combobox2").getText();
+        grid0.load({ applyDate: key1, mName: key2, applicant: key3, department: key4,print:key5 });
+    }
+
+    function onActionRenderer1(e) {
+        var grid0 = e.sender;
+        var record = e.record;
+        var s = '<input type="checkbox">';
+        return s;
+    }
+
+    function onActionRenderer2(e) {
+        var grid0 = e.sender;
+        var record = e.record;
+        var s = '<button onclick="deal()">📝办理</button>&nbsp;<button>🖨打印</button>';
+        return s;
+    }
 
 
     function onComboValidation(e) {
