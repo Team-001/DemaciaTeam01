@@ -2,9 +2,11 @@ package com.demacia.controller;
 
 import com.demacia.domain.Department;
 import com.demacia.domain.Mission;
+import com.demacia.domain.Project;
 import com.demacia.domain.Staff;
 import com.demacia.service.DepService;
 import com.demacia.service.MissionService;
+import com.demacia.service.ProjectService;
 import com.demacia.service.StaffService;
 import com.demacia.utils.BaseResult;
 import org.springframework.stereotype.Controller;
@@ -28,6 +30,8 @@ public class MainController {
     private DepService depService;
     @Resource
     private MissionService missionService;
+    @Resource
+    private ProjectService projectService;
 
 
 
@@ -135,6 +139,18 @@ public class MainController {
         System.out.println(missionBaseResult);
         return missionBaseResult;
     }
+
+    @ResponseBody
+    @RequestMapping("/submitProject")
+    public String submitProject(Project project){
+    int number = projectService.projectSubmit(project);
+        if (number !=0){
+            return "提交成功";
+        }
+        return "提交失败";
+
+    }
+
 
 
 

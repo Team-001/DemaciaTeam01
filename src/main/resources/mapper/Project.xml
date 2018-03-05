@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demacia.mapper.ProjectDao">
+    <sql id="projectCols">
+        projId,
+        projName,
+        declared,
+        jointDeclare,
+        purpose,
+        secure,
+        reliability,
+        economy,
+        other,
+        achievement,
+        actual,
+        potential,
+        execution,
+        content,
+        general,
+        company,
+        financial,
+        country,
+        resume,
+        products,
+        property,
+        economic,
+        fixed,
+        acceptance,
+        written,
+        approval
+    </sql>
+    <insert id="projectSubmit"
+            parameterType="com.demacia.domain.Project"
+            useGeneratedKeys="true"
+            keyProperty="projId">
+        INSERT INTO project_information (<include refid="projectCols"/>)
+        VALUES (
+        #{projId},
+        #{projName},
+        #{declared},
+        #{jointDaclare},
+        #{purpose},
+        #{secure},
+        #{reliability},
+        #{economy},
+        #{other},
+        #{achievement},
+        #{actual},
+        #{potential},
+        #{execution},
+        #{content},
+        #{general},
+        #{company},
+        #{financial},
+        #{country},
+        #{resume},
+        #{products},
+        #{property},
+        #{economic},
+        #{fixed},
+        #{acceptance},
+        #{written},
+        #{approval})
+    </insert>
+</mapper>

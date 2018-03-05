@@ -18,7 +18,7 @@ public class ProjectBase implements Serializable{
     engineerEvaluate,accordEvaluate,applicationEvaluate,
     totalEvaluate,pmsRequire,advice,effectFlag,staff,
     staffName;
-    private Date createDate;
+    private String createDate;
 
     @Override
     public String toString() {
@@ -60,7 +60,7 @@ public class ProjectBase implements Serializable{
                 '}';
     }
 
-    public ProjectBase(int projId, String projName, String projType, String org, String orgName, String uniteOrg, String uniteOrgName, double cycle, double totalBudget, String purpose, String safeDesc, String reliableDesc, String econDesc, String otherDesc, String achieveMentDesc, String realUser, String potentialUser, String content, String primeStaff, String primeUser, String rightDesc, String benefitsDesc, String fixedAssets, String acceptStand, String engineerEvaluate, String accordEvaluate, String applicationEvaluate, String totalEvaluate, String pmsRequire, String advice, String effectFlag, String staff, String staffName, Date createDate) {
+    public ProjectBase(int projId, String projName, String projType, String org, String orgName, String uniteOrg, String uniteOrgName, double cycle, double totalBudget, String purpose, String safeDesc, String reliableDesc, String econDesc, String otherDesc, String achieveMentDesc, String realUser, String potentialUser, String content, String primeStaff, String primeUser, String rightDesc, String benefitsDesc, String fixedAssets, String acceptStand, String engineerEvaluate, String accordEvaluate, String applicationEvaluate, String totalEvaluate, String pmsRequire, String advice, String effectFlag, String staff, String staffName, String createDate) {
         this.projId = projId;
         this.projName = projName;
         this.projType = projType;
@@ -364,11 +364,11 @@ public class ProjectBase implements Serializable{
         this.staffName = staffName;
     }
 
-    public Date getCreateDate() {
+    public String getCreateDate() {
         return createDate;
     }
 
-    public void setCreateDate(Date createDate) {
+    public void setCreateDate(String createDate) {
         this.createDate = createDate;
     }
 }

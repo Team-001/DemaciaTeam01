@@ -1,11 +1,13 @@
 package com.demacia.domain;
 
+import java.io.Serializable;
+
 /**
  * Created by dllo on 18/3/1.
  */
-public class Project {
+public class Project implements Serializable{
     private String projId;
-    private String projName,declare,jointDaclare,purpose,
+    private String projName, declared,jointDaclare,purpose,
     secure,reliability, economy,other,achievement,actual,
     potential,execution,content,resume,products, property,
     economic,fixed,acceptance,written,approval;
@@ -19,7 +21,7 @@ public class Project {
         return "Project{" +
                 "projId='" + projId + '\'' +
                 ", projName='" + projName + '\'' +
-                ", declare='" + declare + '\'' +
+                ", declared='" + declared + '\'' +
                 ", jointDaclare='" + jointDaclare + '\'' +
                 ", purpose='" + purpose + '\'' +
                 ", secure='" + secure + '\'' +
@@ -46,10 +48,9 @@ public class Project {
                 '}';
     }
 
-    public Project(String projId, String projName, String declare, String jointDaclare, String purpose, String secure, String reliability, String eoonomy, String other, String achievement, String actual, String potential, String execution, String content, String resume, String products, String proerty, String economic, String fixed, String acceptance, String written, String approval, double general, double company, double financial, double country) {
-        this.projId = projId;
+    public Project(String projName, String declare, String jointDaclare, String purpose, String secure, String reliability, String eoonomy, String other, String achievement, String actual, String potential, String execution, String content, String resume, String products, String proerty, String economic, String fixed, String acceptance, String written, String approval, double general, double company, double financial, double country) {
         this.projName = projName;
-        this.declare = declare;
+        this.declared = declare;
         this.jointDaclare = jointDaclare;
         this.purpose = purpose;
         this.secure = secure;
@@ -91,12 +92,12 @@ public class Project {
         this.projName = projName;
     }
 
-    public String getDeclare() {
-        return declare;
+    public String getDeclared() {
+        return declared;
     }
 
-    public void setDeclare(String declare) {
-        this.declare = declare;
+    public void setDeclared(String declared) {
+        this.declared = declared;
     }
 
     public String getJointDaclare() {
