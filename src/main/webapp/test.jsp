@@ -16,14 +16,14 @@
 
 </head>
 <body>
-<div id="datagrid1" class="mini-datagrid" style="width:100%;height:250px;"
-     url="../data/AjaxService.aspx?method=SearchEmployees" idField="id" allowResize="true"
+<div sid="datagrid1" class="mini-datagrid" style="width:100%;height:250px;"
+     url="../data/AjaxService.aspx?method=SearchEmployees" idField="sid" allowResize="true"
      sizeList="[20,30,50,100]" pageSize="20"
 >
     <div property="columns">
         <div type="indexcolumn" ></div>
         <div field="loginname" width="120" headerAlign="center" allowSort="true">员工帐号</div>
-        <div field="name" width="120" headerAlign="center" allowSort="true">姓名</div>
+        <div field="sname" width="120" headerAlign="center" allowSort="true">姓名</div>
         <div field="gender" width="100" renderer="onGenderRenderer" align="center" headerAlign="center">性别</div>
         <div field="salary" numberFormat="¥#,0.00" align="right" width="100" allowSort="true">薪资</div>
         <div field="age" width="100" allowSort="true" decimalPlaces="2" dataType="float">年龄</div>

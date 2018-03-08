@@ -85,7 +85,7 @@
                                 <td><input id="btnEdit1" style="width: 100%"
                                            class="mini-buttonedit"
                                            allowInput="true"
-                                           onbuttonclick="onDeclaredButtonEdit"
+                                           onbuttonclick="onDeclareButtonEdit"
                                            type="text"
                                            name="declared" />
                                 </td>
@@ -211,13 +211,13 @@
                                 <td style="background-color:#e9f6fe;text-align: right">产品形式</td>
                                 <td>
                                     <div>&nbsp;&nbsp;&nbsp;
-                                        <input type="checkbox" name="products">专题报告
-                                        <input type="checkbox" name="products">技术方案
-                                        <input type="checkbox" name="products">技术标准
-                                        <input type="checkbox" name="products">硬件产品
-                                        <input type="checkbox" name="products">生产性文件
-                                        <input type="checkbox" name="products">设计文件
-                                        <input type="checkbox" name="products">计算机软件
+                                        <input type="checkbox" name="products" value="专题报告">专题报告
+                                        <input type="checkbox" name="products" value="技术方案">技术方案
+                                        <input type="checkbox" name="products" value="技术标准">技术标准
+                                        <input type="checkbox" name="products" value="硬件产品">硬件产品
+                                        <input type="checkbox" name="products" value="生产性文件">生产性文件
+                                        <input type="checkbox" name="products" value="设计文件">设计文件
+                                        <input type="checkbox" name="products" value="计算机软件">计算机软件
                                         <input type="checkbox" onclick="energyTypeCheck(this)">其他
                                         <input style="display:none; position: absolute;right: 20%;top: 4px" type="text" id="Checkbox5"/>
                                     </div>
@@ -300,51 +300,49 @@
 <script>
     mini.parse();
     //审批(部门经理)弹出框的点击事件
-    function onClazzButtonEdit(e) {
-        //加载mini组件 后面的get方法才好用
+
+    function onDeclareButtonEdit() {
         var btnEdit = this;
         mini.open({
-            url: "page/staff_table.jsp",
-            title: "选择班级",
-            width: 650,
-            height: 380,
+            url:"/declareTable",
+            title: "项目申报单位",
+            width: 500,
+            height: 500,
             ondestroy: function (action) {
-                //if (action == "close") return false;
                 if (action == "ok") {
                     var iframe = this.getIFrameEl();
                     var data = iframe.contentWindow.GetData();
-                    data = mini.clone(data);    //必须
+                    data = mini.clone(data);
                     if (data) {
-                        btnEdit.setValue(data.cid);
-                        btnEdit.setText(data.cname);
+                        btnEdit.setValue(data.id);
+                        btnEdit.setText(data.name);
                     }
                 }
 
             }
-        })
+        });
     }
-    function onStudentButtonEdit(e) {
-        //加载mini组件 后面的get方法才好用
+
+    function onJointDeclareButtonEdit() {
         var btnEdit = this;
         mini.open({
-            url: "page/SelectStudent.html",
-            title: "选择学生",
-            width: 650,
-            height: 380,
+            url:"/jointDeclareTable",
+            title: "联合申报单位",
+            width: 500,
+            height: 500,
             ondestroy: function (action) {
-                //if (action == "close") return false;
                 if (action == "ok") {
                     var iframe = this.getIFrameEl();
                     var data = iframe.contentWindow.GetData();
-                    data = mini.clone(data);    //必须
+                    data = mini.clone(data);
                     if (data) {
-                        btnEdit.setValue(data.sid);
-                        btnEdit.setText(data.sname);
+                        btnEdit.setValue(data.id);
+                        btnEdit.setText(data.name);
                     }
                 }
 
             }
-        })
+        });
     }
 
     function energyTypeCheck (chk) {

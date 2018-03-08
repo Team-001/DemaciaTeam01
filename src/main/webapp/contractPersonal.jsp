@@ -54,7 +54,7 @@
     </style>
 </head>
 <body>
-<div id="tabs1" class="mini-tabs" activeIndex="0" style="width:100%;height:100%;" plain="false">
+<div sid="tabs1" class="mini-tabs" activeIndex="0" style="width:100%;height:100%;" plain="false">
     <div title="待办任务" >
         <table cellpadding="1" cellspacing="2" class="table1">
             <tr>
@@ -62,17 +62,17 @@
             </tr>
             <tr>
                 <td class="trTitle" colspan="8">
-                    <div id="panel0" class="mini-panel" title="⬇️查询条件" style="width:100%;height:135px;"
+                    <div sid="panel0" class="mini-panel" title="⬇️查询条件" style="width:100%;height:135px;"
                          allowResize="true" collapseOnTitleClick="true">
                         <table class="table1">
                             <tr>
                                 <td style="width:80px">申请时间</td>
                                 <td colspan="2" style="text-align: left;border: 0">
-                                    <input id="date1" style="width: 70%" class="mini-datepicker"/>
+                                    <input sid="date1" style="width: 70%" class="mini-datepicker"/>
                                 </td>
                                 <td style="width:80px">流程名称</td>
                                 <td colspan="2" style="text-align: left">
-                                    <input id="combobox1" class="mini-combobox" style="width:80%;" textField="text" valueField="id"
+                                    <input sid="combobox1" class="mini-combobox" style="width:80%;" textField="text" valueField="sid"
                                            url="text/process.txt"  showNullItem="false" required="true" allowInput="false"
                                            onvalidation="onComboValidation"/>
                                 </td>
@@ -80,11 +80,11 @@
                             <tr>
                                 <td style="width:80px">申请人</td>
                                 <td colspan="2" style="text-align: left">
-                                    <input id="btnEdit1" style="width: 70%"
+                                    <input sid="btnEdit1" style="width: 70%"
                                            class="mini-buttonedit"
                                            allowInput="false"
                                            onbuttonclick="onStaffButtonEdit"
-                                           name="id" textName="name"/>
+                                           sname="sid" textName="sname"/>
                                 </td>
                                 <td style="width:80px">关键字</td>
                                 <td colspan="2" style="text-align: left">
@@ -94,11 +94,11 @@
                             <tr>
                                 <td style="width:80px">所属部门</td>
                                 <td colspan="2" style="text-align: left">
-                                    <input id="btnEdit2" style="width: 80%"
+                                    <input sid="btnEdit2" style="width: 80%"
                                            class="mini-buttonedit"
                                            allowInput="false"
                                            onbuttonclick="onDepButtonEdit"
-                                           name="id" textName="name"/>
+                                           sname="sid" textName="sname"/>
                                 </td>
                             </tr>
 
@@ -241,9 +241,9 @@
                     var data = iframe.contentWindow.GetData();
                     data = mini.clone(data);
                     if (data) {
-                        console.log(data.id+"---"+data.name);
-                        btnEdit.setValue(data.id);
-                        btnEdit.setText(data.name);
+                        console.log(data.sid+"---"+data.sname);
+                        btnEdit.setValue(data.sid);
+                        btnEdit.setText(data.sname);
                     }
                 }
 
@@ -263,9 +263,9 @@
                     var data = iframe.contentWindow.GetData();
                     data = mini.clone(data);
                     if (data) {
-                        console.log(data.id+"---"+data.name);
-                        btnEdit.setValue(data.id);
-                        btnEdit.setText(data.name);
+                        console.log(data.sid+"---"+data.sname);
+                        btnEdit.setValue(data.sid);
+                        btnEdit.setText(data.sname);
                     }
                 }
 

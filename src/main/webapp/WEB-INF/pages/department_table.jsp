@@ -28,8 +28,8 @@
          borderStyle="border-left:0;border-right:0;" onrowdblclick="onRowDblClick"
     >
         <div property="columns">
-            <div field="id" width="30px" headerAlign="center" allowSort="true">部门编号</div>
-            <div field="name" width="150px" headerAlign="center" allowSort="true">部门名称</div>
+            <div align="center" field="id" width="30px" headerAlign="center" allowSort="true">部门编号</div>
+            <div align="center" field="name" width="150px" headerAlign="center" allowSort="true">部门名称</div>
         </div>
     </div>
 

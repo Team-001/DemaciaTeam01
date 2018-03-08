@@ -135,7 +135,7 @@
                                 <input type="checkbox">设计文件
                                 <input type="checkbox">计算机软件
                                 <input type="checkbox" onclick="other(this);">其他
-                                <input style="position: absolute; left: 80%;top: 2px; display:none;" type="text" id="Checkbox5"/>
+                                <input style="position: absolute; left: 80%;top: 2px; display:none;" type="text" sid="Checkbox5"/>
                             </span>
 
 
@@ -161,9 +161,9 @@
                     </tr>
                     <tr>
                         <td style="background-color:#e9f6fe;text-align: right">运作说明 <font color="red">※</font></td>
-                        <td id="upload" colspan="2" style="text-align: left">
+                        <td sid="upload" colspan="2" style="text-align: left">
                             <div>
-                                <input class="mini-htmlfile" name="Fdata" id="file1" style="width:30%;"/>
+                                <input class="mini-htmlfile" name="Fdata" sid="file1" style="width:30%;"/>
                             </div>
                         </td>
                     </tr>
@@ -184,7 +184,7 @@
                                    class="mini-buttonedit"
                                    onbuttonclick="onStudentButtonEdit"
                                    allowInput="false"
-                                   name="sid" textName="sname"/>
+                                   name="id" textName="name"/>
                         </td>
                     </tr>
                 </table>

@@ -21,16 +21,9 @@
             border-collapse: collapse;
 
         }
-        .table2 {
-            width: 100%;
-            border-collapse: collapse;
-            border: 1px solid #C1DEE7;
-        }
         td {
             text-align: center;
             border-collapse: collapse;
-            padding: 3px;
-            height: 20px;
             background-color: #ecf6f9;
             font-size: 12px;
         }
@@ -40,14 +33,6 @@
             background-color: #cae5f8;
             color: #427dc0;
             text-align: left;
-        }
-        .table2>td {
-            text-align: center;
-            border-collapse: collapse;
-            padding: 3px;
-            height: 20px;
-            font-size: 12px;
-            border: 1px solid #C1DEE7;
         }
 
     </style>
@@ -73,8 +58,8 @@
                         <td colspan="2" style="text-align: left">
                             <input id="btnEdit0" style="width: 80%"
                                    class="mini-buttonedit"
-                                   allowInput="false"
-                                   onbuttonclick="onStaffButtonEdit"
+                                   allowInput="true"
+                                   onbuttonclick="onManagerButtonEdit"
                                    name="id" textName="name"/>
                         </td>
                     </tr>
@@ -89,51 +74,43 @@
             <button style="float: right">🔍查询</button >
         </td>
     </tr>
-    <table class="table2" style="border: 1px solid;border-collapse: collapse">
-        <tr>
-            <td style="width:30px;border: 1px solid #C1DEE7;"><input type="checkbox"></td>
-            <td style="border: 1px solid #C1DEE7">卫星库</td>
-            <td style="border: 1px solid #C1DEE7">管理人员</td>
-            <td style="border: 1px solid #C1DEE7">创建日期</td>
-            <td style="border: 1px solid #C1DEE7">是否有效</td>
-        </tr>
-        <tr>
-            <td style="border: 1px solid #C1DEE7;"><input type="checkbox"></td>
-            <td style="border: 1px solid #C1DEE7;">1</td>
-            <td style="border: 1px solid #C1DEE7;">1</td>
-            <td style="border: 1px solid #C1DEE7;">1</td>
-            <td style="border: 1px solid #C1DEE7;">1</td>
-        </tr>
-        <tr>
-            <td colspan="6" style="height:30px;">
-                <div class="mini-pager" style="width:98%;height:100%;background:#f0f3f7;border:solid 1px #ccc;    "
-                     totalCount="${sessionScope.pageBean.totalPage} " onpagechanged="onPageChanged" sizeList="[5,10,20]"
-                     showPageSize="true" showPageIndex="true" showPageInfo="true"
-                     buttons="#buttons">
-                </div>
-            </td>
-        </tr>
-    </table>
-
-
 </table>
+<div id="grid0"
+     class="mini-datagrid"
+     style="width:100%;height:250px;"
+     idField="id"
+     sizeList="[2,5,10]" pageSize="5">
+    <div property="columns">
+        <div width="30" renderer="onActionRenderer1" headerAlign="center" align="center"><input type="checkbox"></div>
+        <div field="sname" width="120" headerAlign="center" align="center">卫星库</div>
+        <div field="manager" width="150" headerAlign="center" align="center">管理人员</div>
+        <div field="createDate" width="100" headerAlign="center" dateFormat="yyyy-MM-dd" align="center">创建日期</div>
+        <div field="effect" width="100" headerAlign="center" align="center">是否有效</div>
+    </div>
+</div>
 
 
 <script type="text/javascript">
     mini.parse();
 
+    var grid0=mini.get("grid0");
+    grid0.setUrl("/splitSatellite");
+    grid0.load();
 
-    function onComboValidation(e) {
-        var items = this.findItems(e.value);
-        if (!items || items.length == 0) {
-            e.isValid = false;
-        }
+
+    function onActionRenderer1(e) {
+        var grid = e.sender;
+        var record = e.record;
+        var s = '<input type="checkbox">';
+        return s;
     }
-    function onStaffButtonEdit() {
+
+
+    function onManagerButtonEdit() {
         var btnEdit = this;
         mini.open({
             url:"/staffTable",
-            title: "申请人列表",
+            title: "卫星库管理人列表",
             width: 500,
             height: 500,
             ondestroy: function (action) {
@@ -152,29 +129,6 @@
         });
     }
 
-
-    function onDepButtonEdit() {
-        var btnEdit = this;
-        mini.open({
-            url:"/depTable",
-            title: "部门列表",
-            width: 500,
-            height: 500,
-            ondestroy: function (action) {
-                if (action == "ok") {
-                    var iframe = this.getIFrameEl();
-                    var data = iframe.contentWindow.GetData();
-                    data = mini.clone(data);
-                    if (data) {
-                        console.log(data.id+"---"+data.name);
-                        btnEdit.setValue(data.id);
-                        btnEdit.setText(data.name);
-                    }
-                }
-
-            }
-        });
-    }
 
 
 </script>

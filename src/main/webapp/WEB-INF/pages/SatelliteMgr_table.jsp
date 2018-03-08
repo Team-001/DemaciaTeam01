@@ -16,21 +16,20 @@
 </head>
 <body>
     <div class="mini-toolbar" style="text-align:right;line-height:30px;" borderStyle="border:0;">
-          <label >申请人姓名：</label>
-          <input id="key" class="mini-textbox" style="width:150px;" onenter="onKeyEnter"/>
+          <label >单位名称：</label>
+          <input sid="key" class="mini-textbox" style="width:150px;" onenter="onKeyEnter"/>
           <a class="mini-button" style="width:60px;" onclick="search()">🔍查询</a>
     </div>
     <div class="mini-fit">
 
-        <div id="grid1" class="mini-datagrid" style="width:100%;height:100%;"
-            idField="id" allowResize="true"
+        <div sid="grid1" class="mini-datagrid" style="width:100%;height:100%;"
+            idField="sid" allowResize="true"
              sizeList="[2,3,5,10]" pageSize="5"
             borderStyle="border-left:0;border-right:0;" onrowdblclick="onRowDblClick"
         >
             <div property="columns" style="text-align: center">
-                <div align="center" field="id" width="150px" headerAlign="center" allowSort="true">员工编号</div>
-                <div align="center" field="name" width="150px" headerAlign="center" allowSort="true">员工姓名</div>
-                <div align="center" field="email" width="200px" headerAlign="center" allowSort="true">员工邮箱</div>
+                <div align="center" field="sid" width="150px" headerAlign="center" allowSort="true">单位编号</div>
+                <div align="center" field="sname" width="150px" headerAlign="center" allowSort="true">单位名称</div>
             </div>
         </div>
     
@@ -49,7 +48,7 @@
     var grid = mini.get("grid1");
 
     //动态设置URL
-    grid.setUrl("/spiltPageStaff");
+    grid.setUrl("/splitDeclare");
 
     grid.load();
 
@@ -59,7 +58,7 @@
     }
     function search() {
         var key = mini.get("key").getValue();
-        grid.load({ name: key });
+        grid.load({ sname: key });
     }
     function onKeyEnter(e) {
         search();

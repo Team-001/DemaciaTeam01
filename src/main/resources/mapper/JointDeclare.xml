@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demacia.mapper.JointDeclareDao">
+    <resultMap id="jointDeclareMap" type="com.demacia.domain.JointDeclare">
+        <id property="id" column="jointId"/>
+        <result property="name" column="jointName"/>
+    </resultMap>
+    <select id="selectJointDeclare"
+            resultMap="jointDeclareMap"
+            parameterType="com.demacia.utils.StaffAndDepartment">
+        SELECT jointId,jointName
+        FROM team01.jointDeclare
+        <where>
+            <if test="name!= null and name!=''">
+                AND jointName LIKE '%${name}%'
+            </if>
+        </where>
+        limit #{pageIndex},#{pageSize}
+    </select>
+    <select id="getTotal"
+            resultType="java.lang.Integer"
+            parameterType="com.demacia.utils.StaffAndDepartment">
+        SELECT COUNT(jointId)
+        FROM team01.jointdeclare
+        <where>
+            <if test="name!=null and name!=''">
+                AND jointName LIKE '%${name}%'
+            </if>
+        </where>
+    </select>
+</mapper>

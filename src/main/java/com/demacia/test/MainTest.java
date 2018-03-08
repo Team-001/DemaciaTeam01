@@ -1,19 +1,15 @@
 package com.demacia.test;
 
-import com.demacia.domain.Department;
-import com.demacia.domain.Mission;
-import com.demacia.domain.Staff;
-import com.demacia.mapper.DepDao;
-import com.demacia.mapper.MissionDao;
-import com.demacia.mapper.StaffDao;
+import com.demacia.domain.*;
+import com.demacia.mapper.*;
 import com.demacia.utils.MissionUtil;
+import com.demacia.utils.SatelliteUitl;
 import com.demacia.utils.StaffAndDepartment;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -25,6 +21,9 @@ public class MainTest {
     private ApplicationContext c;
     private DepDao depDao;
     private MissionDao missionDao;
+    private DeclareDao declareDao;
+    private JointDeclareDao jointDeclareDao;
+    private SatelliteDao satelliteDao;
 
     @Before
     public void init(){
@@ -32,6 +31,9 @@ public class MainTest {
         dao = c.getBean(StaffDao.class);
         depDao = c.getBean(DepDao.class);
         missionDao=c.getBean(MissionDao.class);
+        declareDao = c.getBean(DeclareDao.class);
+        jointDeclareDao = c.getBean(JointDeclareDao.class);
+        satelliteDao = c.getBean(SatelliteDao.class);
     }
 
     @Test
@@ -72,5 +74,42 @@ public class MainTest {
         List<Mission> missionList = missionDao.selectMission(missionUtil);
         System.out.println(total);
         System.out.println(missionList);
+    }
+
+    @Test
+    public void DeclareTest(){
+        StaffAndDepartment staffAndDepartment = new StaffAndDepartment();
+        staffAndDepartment.setName("");
+        staffAndDepartment.setPageIndex(0);
+        staffAndDepartment.setPageSize(3);
+        int total = declareDao.getTotal(staffAndDepartment);
+        List<Declare> declareList = declareDao.selectDeclare(staffAndDepartment);
+        System.out.println(total);
+        System.out.println(declareList);
+    }
+
+    @Test
+    public void JDeclareTest(){
+        StaffAndDepartment staffAndDepartment = new StaffAndDepartment();
+        staffAndDepartment.setName("");
+        staffAndDepartment.setPageIndex(0);
+        staffAndDepartment.setPageSize(3);
+        int total = jointDeclareDao.getTotal(staffAndDepartment);
+        List<JointDeclare> jointDeclareList = jointDeclareDao.selectJointDeclare(staffAndDepartment);
+        System.out.println(total);
+        System.out.println(jointDeclareList);
+    }
+
+    @Test
+    public void satellite(){
+        SatelliteUitl satelliteUitl = new SatelliteUitl();
+        satelliteUitl.setSname("");
+        satelliteUitl.setManager("");
+        satelliteUitl.setPageIndex(0);
+        satelliteUitl.setPageSize(3);
+        int total = satelliteDao.getTotal(satelliteUitl);
+        List<Satellite> satelliteList = satelliteDao.selectSatellite(satelliteUitl);
+        System.out.println(total);
+        System.out.println(satelliteList);
     }
 }

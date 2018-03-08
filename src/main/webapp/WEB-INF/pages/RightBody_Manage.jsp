@@ -21,16 +21,10 @@
             border-collapse: collapse;
 
         }
-        .table2 {
-            width: 100%;
-            border-collapse: collapse;
-            border: 1px solid #C1DEE7;
-        }
+
         td {
             text-align: center;
             border-collapse: collapse;
-            padding: 3px;
-            height: 20px;
             background-color: #ecf6f9;
             font-size: 12px;
         }
@@ -40,14 +34,6 @@
             background-color: #cae5f8;
             color: #427dc0;
             text-align: left;
-        }
-        .table2>td {
-            text-align: center;
-            border-collapse: collapse;
-            padding: 3px;
-            height: 20px;
-            font-size: 12px;
-            border: 1px solid #C1DEE7;
         }
 
     </style>
@@ -85,7 +71,7 @@
                         <td style="width:80px">流程类型</td>
                         <td colspan="2" style="text-align: left">
                             <input id="combobox1" class="mini-combobox" style="width:80%;" textField="text" valueField="id"
-                                   url="text/process.txt"  showNullItem="true" required="true"
+                                   url="text/process.txt"  showNullItem="true" required="true" allowInput="true"
                                    onvalidation="onComboValidation"/>
                         </td>
                         <td style="width:80px">所属部门</td>
@@ -121,7 +107,7 @@
         <div field="mName" width="150" headerAlign="center" align="center">流程名称</div>
         <div field="department" width="100" headerAlign="center" headerAlign="center" align="center">所属部门</div>
         <div field="stage"  headerAlign="center" width="100"  align="center">当前环节</div>
-        <div field="applicant" width="100" headerAlign="center" align="center" decimalPlaces="2" dataType="float">提报人</div>
+        <div field="applicant" width="100" headerAlign="center" align="center" dataType="float">提报人</div>
         <div field="print" width="80" headerAlign="center" align="center">是否可以打印</div>
         <div width="130" renderer="onActionRenderer2" headerAlign="center" align="center">操作</div>
     </div>

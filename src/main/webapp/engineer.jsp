@@ -51,7 +51,7 @@
     <table class="table1">
         <tr>
             <td class="trTitle" colspan="4">
-                <div id="panel1" class="mini-panel" title="⬇️项目基本信息" style="width:100%;height:130px;"
+                <div sid="panel1" class="mini-panel" title="⬇️项目基本信息" style="width:100%;height:130px;"
                      allowResize="true" collapseOnTitleClick="true">
                     <table class="table1">
                         <tr>
@@ -77,7 +77,7 @@
 
         <tr>
             <td class="trTitle" colspan="4" style="width:100px">
-                <div id="panel2" class="mini-panel" title="⬇️与核电生产运营安全性、可靠性、经济的适应分析" style="width:100%;height:100px;"
+                <div sid="panel2" class="mini-panel" title="⬇️与核电生产运营安全性、可靠性、经济的适应分析" style="width:100%;height:100px;"
                      allowResize="true" collapseOnTitleClick="true">
                     <table class="table1">
                         <tr>
@@ -98,7 +98,7 @@
         </tr>
         <tr>
             <td class="trTitle" colspan="4">
-                <div id="panel3" class="mini-panel" title="⬇️评审信息" style="width:100%;height:135px;"
+                <div sid="panel3" class="mini-panel" title="⬇️评审信息" style="width:100%;height:135px;"
                      allowResize="true" collapseOnTitleClick="true">
                     <table class="table1">
                         <tr>
@@ -107,9 +107,9 @@
                         </tr>
                         <tr>
                             <td style="background-color:#e9f6fe;text-align: right">立项报告书<font color="red">※</font></td>
-                            <td id="upload" style="text-align: left;border: 0">
+                            <td sid="upload" style="text-align: left;border: 0">
                                 <div>
-                                    <input class="mini-htmlfile" name="Fdata" id="file1" style="width:100%;"/>
+                                    <input class="mini-htmlfile" sname="Fdata" sid="file1" style="width:100%;"/>
                                 </div>
                             </td>
                         </tr>
@@ -120,17 +120,17 @@
 
         <tr>
             <td class="trTitle" colspan="4">
-                <div id="panel4" class="mini-panel" title="⬇️流程信息" style="width:100%;height:65px;"
+                <div sid="panel4" class="mini-panel" title="⬇️流程信息" style="width:100%;height:65px;"
                      allowResize="true" collapseOnTitleClick="true">
                     <table class="table1">
                         <tr>
                             <td style="width: 100px;background-color:#e9f6fe;text-align: left">审批组长</td>
                             <td style="width: 40%;border: 0">
-                                <input id="btnEdit1" style="width: 100%"
+                                <input sid="btnEdit1" style="width: 100%"
                                        class="mini-buttonedit"
                                        onbuttonclick="onStudentButtonEdit"
                                        allowInput="false"
-                                       name="sid" textName="sname"/>
+                                       sname="sid" textName="sname"/>
                             </td>
                         </tr>
                     </table>

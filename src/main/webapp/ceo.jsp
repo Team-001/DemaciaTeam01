@@ -52,7 +52,7 @@
     <table class="table1">
         <tr>
             <td class="trTitle" colspan="4">
-                <div id="panel1" class="mini-panel" title="⬇️项目基本信息" style="width:100%;height:130px;"
+                <div sid="panel1" class="mini-panel" title="⬇️项目基本信息" style="width:100%;height:130px;"
                      allowResize="true" collapseOnTitleClick="true">
                     <table class="table1">
                         <tr>
@@ -78,7 +78,7 @@
 
         <tr>
             <td class="trTitle" colspan="4" style="width:100px">
-                <div id="panel2" class="mini-panel" title="⬇️与核电生产运营安全性、可靠性、经济的适应分析" style="width:100%;height:100px;"
+                <div sid="panel2" class="mini-panel" title="⬇️与核电生产运营安全性、可靠性、经济的适应分析" style="width:100%;height:100px;"
                      allowResize="true" collapseOnTitleClick="true">
                     <table class="table1">
                         <tr>
@@ -99,7 +99,7 @@
         </tr>
         <tr>
             <td class="trTitle" colspan="4">
-                <div id="panel3" class="mini-panel" title="⬇️工程师评审意见" style="width:100%;height:125px;"
+                <div sid="panel3" class="mini-panel" title="⬇️工程师评审意见" style="width:100%;height:125px;"
                      allowResize="true" collapseOnTitleClick="true">
                     <table class="table1">
                         <tr>
@@ -117,7 +117,7 @@
 
         <tr>
             <td class="trTitle" colspan="4">
-                <div id="panel4" class="mini-panel" title="⬇️技术可行性分析意见" style="width:100%;height:260px;"
+                <div sid="panel4" class="mini-panel" title="⬇️技术可行性分析意见" style="width:100%;height:260px;"
                      allowResize="true" collapseOnTitleClick="true">
                     <table class="table1">
                         <tr>
@@ -138,7 +138,7 @@
         </tr>
         <tr>
             <td class="trTitle" colspan="4">
-                <div id="panel5" class="mini-panel" title="⬇️科技办经理审批信息" style="width:100%;height:170px;"
+                <div sid="panel5" class="mini-panel" title="⬇️科技办经理审批信息" style="width:100%;height:170px;"
                      allowResize="true" collapseOnTitleClick="true">
                     <table class="table1">
                         <tr>
@@ -155,7 +155,7 @@
         </tr>
         <tr>
             <td class="trTitle" colspan="4">
-                <div id="panel6" class="mini-panel" title="⬇️审批意见" style="width:100%;height:150px;"
+                <div sid="panel6" class="mini-panel" title="⬇️审批意见" style="width:100%;height:150px;"
                      allowResize="true" collapseOnTitleClick="true">
                     <table class="table1">
                         <tr>

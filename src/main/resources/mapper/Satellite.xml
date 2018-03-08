@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demacia.mapper.SatelliteDao">
+    <sql id="satelliteCols">
+        sname,
+        manager,
+        createDate,
+        effect
+    </sql>
+    <select id="selectSatellite" resultType="com.demacia.domain.Satellite" parameterType="com.demacia.utils.SatelliteUitl">
+        SELECT
+        <include refid="satelliteCols"/>
+        FROM team01.satellite
+        <where>
+            <if test="sname!= null and sname!=''">
+                AND sname LIKE '%${sname}%'
+            </if>
+            <if test="manager!= null and manager!=''">
+                AND manager LIKE '%${manager}%'
+            </if>
+        </where>
+        limit #{pageIndex},#{pageSize}
+    </select>
+    <select id="getTotal" resultType="java.lang.Integer" parameterType="com.demacia.utils.SatelliteUitl">
+        SELECT COUNT(sid)
+        FROM team01.satellite
+        <where>
+            <if test="sname!= null and sname!=''">
+                AND sname LIKE '%${sname}%'
+            </if>
+            <if test="manager!= null and manager!=''">
+                AND manager LIKE '%${manager}%'
+            </if>
+        </where>
+    </select>
+    <select id="selectMgr" resultType="com.demacia.domain.Satellite" parameterType="com.demacia.utils.SatelliteUitl">
+        SELECT sid,manager
+        FROM team01.satellite
+        <where>
+            <if test="manager != null and manager !=''">
+                AND manager LIKE '%${manager}%'
+            </if>
+        </where>
+    </select>
+</mapper>

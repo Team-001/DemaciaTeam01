@@ -55,7 +55,7 @@
     <table class="table1">
         <tr>
             <td class="trTitle" colspan="4">
-                <div id="panel1" class="mini-panel" title="⬇️项目基本信息" style="width:100%;height:130px;"
+                <div sid="panel1" class="mini-panel" title="⬇️项目基本信息" style="width:100%;height:130px;"
                      allowResize="true" collapseOnTitleClick="true">
                     <table class="table1">
                         <tr>
@@ -81,7 +81,7 @@
 
         <tr>
             <td class="trTitle" colspan="4" style="width:100px">
-                <div id="panel2" class="mini-panel" title="⬇️与核电生产运营安全性、可靠性、经济的适应分析" style="width:100%;height:100px;"
+                <div sid="panel2" class="mini-panel" title="⬇️与核电生产运营安全性、可靠性、经济的适应分析" style="width:100%;height:100px;"
                      allowResize="true" collapseOnTitleClick="true">
                     <table class="table1">
                         <tr>
@@ -103,7 +103,7 @@
 
         <tr>
             <td class="trTitle" colspan="4">
-                <div id="panel3" class="mini-panel" title="⬇️审批意见" style="width:100%;height:150px;"
+                <div sid="panel3" class="mini-panel" title="⬇️审批意见" style="width:100%;height:150px;"
                      allowResize="true" collapseOnTitleClick="true">
                     <table class="table1">
                         <tr>

@@ -15,14 +15,13 @@
     <script src="../../scripts/boot.js" type="text/javascript"></script>
     <%--<script src="../../js/ajaxfileupload.js" type="text/javascript"></script>--%>
     <style>
-        .table1,.table2 {
+        .table1 {
             width: 100%;
             border-collapse: collapse;
             border: 1px solid #C1DEE7;
         }
         td {
             text-align: center;
-            padding: 3px;
             background-color: #ecf6f9;
             font-size: 12px;
         }
@@ -153,15 +152,14 @@
                  class="mini-datagrid"
                  style="width:100%;height:250px;"
                  idField="id"
-                 sizeList="[2,5,10]" pageSize="5"
-            >
+                 sizeList="[2,5,10]" pageSize="5">
                 <div property="columns">
                     <div width="30" renderer="onActionRenderer1" headerAlign="center" align="center"><input type="checkbox"></div>
                     <div field="mid" width="120" headerAlign="center" align="center">流程编号</div>
                     <div field="mName" width="150" headerAlign="center" align="center">流程名称</div>
                     <div field="department" width="100" headerAlign="center" headerAlign="center" align="center">所属部门</div>
                     <div field="stage"  headerAlign="center" width="100"  align="center">当前环节</div>
-                    <div field="applicant" width="100" headerAlign="center" align="center" decimalPlaces="2" dataType="float">提报人</div>
+                    <div field="applicant" width="100" headerAlign="center" align="center">提报人</div>
                     <div field="applyDate" width="100" headerAlign="center" dateFormat="yyyy-MM-dd" align="center">提报时间</div>
                     <div width="80" renderer="onActionRenderer2" headerAlign="center" align="center">操作</div>
                 </div>
@@ -190,7 +188,7 @@
     function onActionRenderer2(e) {
         var grid0 = e.sender;
         var record = e.record;
-        var s = '<button>✏️办理</button>';
+        var s = '<button onclick="deal()">✏️办理</button>';
         return s;
     }
 
@@ -227,7 +225,8 @@
             width:700,
             height:500
         })
-    };
+    }
+
     function onStaffButtonEdit() {
         var btnEdit = this;
         mini.open({

@@ -57,7 +57,7 @@
     </tr>
     <tr>
         <td class="trTitle" colspan="8">
-            <div id="panel0" class="mini-panel" title="⬇️申请信息" style="width:100%;height:160px;"
+            <div sid="panel0" class="mini-panel" title="⬇️申请信息" style="width:100%;height:160px;"
                  allowResize="true" collapseOnTitleClick="true">
                 <table class="table1">
                     <tr>
@@ -79,11 +79,11 @@
                     <tr>
                         <td style="text-align: right;background-color: #ecf6f9;width:100px">合同起日期 <font color="red">※</font></td>
                         <td colspan="2" style="text-align: left;border: 0">
-                            <input id="date1" style="width: 100%" class="mini-datepicker"/>
+                            <input sid="date1" style="width: 100%" class="mini-datepicker"/>
                         </td>
                         <td style="text-align: right;background-color: #ecf6f9;width:100px">合同止日期 <font color="red">※</font></td>
                         <td colspan="2" style="text-align: left">
-                            <input id="date2" style="width: 100%" class="mini-datepicker"/>
+                            <input sid="date2" style="width: 100%" class="mini-datepicker"/>
                         </td>
                     </tr>
                 </table>
@@ -93,7 +93,7 @@
 
     <tr>
         <td class="trTitle" colspan="8">
-            <div id="panel1" class="mini-panel" title="⬇️合同经费信息" style="width:100%;height:150px;"
+            <div sid="panel1" class="mini-panel" title="⬇️合同经费信息" style="width:100%;height:150px;"
                  allowResize="true" collapseOnTitleClick="true">
                 <table class="table1">
                     <tr>
@@ -119,7 +119,7 @@
 
     <tr>
         <td class="trTitle" colspan="8">
-            <div id="panel2" class="mini-panel" title="⬇️项目成果分配" style="width:100%;height:320px;"
+            <div sid="panel2" class="mini-panel" title="⬇️项目成果分配" style="width:100%;height:320px;"
                  allowResize="true" collapseOnTitleClick="true">
                 <table class="table1">
                     <tr>
@@ -135,7 +135,7 @@
                                 <input type="checkbox">设计文件
                                 <input type="checkbox">计算机软件
                                 <input type="checkbox" onclick="energyTypeCheck(this);">其他
-                                <input style="display:none; height: 120%; float: right" name="energyType" type="text" id="Checkbox5"/>
+                                <input style="display:none; height: 120%; float: right" sname="energyType" type="text" sid="Checkbox5"/>
                             </div>
                         </td>
 
@@ -158,7 +158,7 @@
                     </tr>
                     <tr>
                         <td style="background-color:#e9f6fe;text-align: right">附件 <font color="red">※</font></td>
-                        <td id="upload" colspan="2" style="text-align: left">
+                        <td sid="upload" colspan="2" style="text-align: left">
                             <a href="">运作说明.doc</a>
                         </td>
                     </tr>
@@ -169,7 +169,7 @@
 
     <tr>
         <td class="trTitle" colspan="8">
-            <div id="panel6" class="mini-panel" title="⬇️审批意见" style="width:100%;height:150px;"
+            <div sid="panel6" class="mini-panel" title="⬇️审批意见" style="width:100%;height:150px;"
                  allowResize="true" collapseOnTitleClick="true">
                 <table class="table1">
                     <tr>

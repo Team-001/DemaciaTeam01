@@ -9,11 +9,9 @@
     { id: "rayIns", pid: "right", text: "🔘射线探伤人员管理", url: "rayInspection" },
     { id: "factory", pid: "right", text: "🔘厂房管理", url: "factoryManage" },
     { id: "workTeam", pid: "right", text: "🔘机组管理", url: "workTeamManage" },
-
 	{ id: "science", text: "🌐 科研项目管理"},
     { id: "review", pid: "science", text: "🔘科研项目申报与评审", url: "science" },
     { id: "contract", pid: "science", text: "🔘科研项目合同推荐申报", url: "contract" },
-
     { id: "satellite", text: "🌐 卫星库管理",},
         { id: "permission", pid: "satellite", text: "🔘卫星库授权", url: "" },
         { id: "additional", pid: "satellite", text: "🔘补文申请", url: "" }

@@ -1,13 +1,7 @@
 package com.demacia.controller;
 
-import com.demacia.domain.Department;
-import com.demacia.domain.Mission;
-import com.demacia.domain.Project;
-import com.demacia.domain.Staff;
-import com.demacia.service.DepService;
-import com.demacia.service.MissionService;
-import com.demacia.service.ProjectService;
-import com.demacia.service.StaffService;
+import com.demacia.domain.*;
+import com.demacia.service.*;
 import com.demacia.utils.BaseResult;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,6 +26,12 @@ public class MainController {
     private MissionService missionService;
     @Resource
     private ProjectService projectService;
+    @Resource
+    private DeclareService declareService;
+    @Resource
+    private JointDeclareService jointDeclareService;
+    @Resource
+    private SatelliteService satelliteService;
 
 
 
@@ -92,6 +92,16 @@ public class MainController {
         return "department_table";
     }
 
+    @RequestMapping("/declareTable")
+    public String declareTable() {
+        return "declare_table";
+    }
+    @RequestMapping("/jointDeclareTable")
+    public String jointDeclareTable() {
+        return "jointDeclare_table";
+    }
+
+
     @RequestMapping("/manage")
     public String manage(){
         return "RightBody_Manage";
@@ -142,16 +152,34 @@ public class MainController {
 
     @ResponseBody
     @RequestMapping("/submitProject")
-    public String submitProject(Project project){
+    public ModelAndView submitProject(Project project){
     int number = projectService.projectSubmit(project);
-        if (number !=0){
-            return "提交成功";
-        }
-        return "提交失败";
-
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("success");
+        return mv;
     }
 
+    @ResponseBody
+    @RequestMapping("/splitDeclare")
+    public BaseResult<Declare> splitDeclare(int pageIndex, int pageSize, String name){
+        BaseResult<Declare> declareBaseResult = declareService.selectDeclare(name, pageIndex * pageSize, pageSize);
+        return declareBaseResult;
+    }
 
+    @ResponseBody
+    @RequestMapping("/splitJointDeclare")
+    public BaseResult<JointDeclare> splitJointDeclare(int pageIndex, int pageSize, String name){
+        BaseResult<JointDeclare> jointDeclareBaseResult = jointDeclareService.selectJointDeclare(name, pageIndex * pageSize, pageSize);
+        return jointDeclareBaseResult;
+    }
+
+    @ResponseBody
+    @RequestMapping("/splitSatellite")
+    public BaseResult<Satellite> splitSatellite(int pageIndex, int pageSize, String sname, String manager){
+        BaseResult<Satellite> satelliteBaseResult = satelliteService.selectSatellite(sname, manager, pageIndex * pageSize, pageSize);
+        System.out.println(satelliteBaseResult);
+        return satelliteBaseResult;
+    }
 
 
 }

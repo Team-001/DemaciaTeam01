@@ -126,7 +126,7 @@
 
     //////////////////////////////////////////
     function updateError(e) {
-        var id = e.sender.name + "_error";
+        var id = e.sender.sname + "_error";
         var el = document.getElementById(id);
         if (el) {
             el.innerHTML = e.errorText;

@@ -63,7 +63,7 @@
     </tr>
     <tr>
         <td class="trTitle" colspan="8">
-            <div id="panel0" class="mini-panel" title="⬇️查询条件" style="width:100%;height:120px;"
+            <div sid="panel0" class="mini-panel" title="⬇️查询条件" style="width:100%;height:120px;"
                  allowResize="true" collapseOnTitleClick="true">
                 <table class="table1">
                     <tr>

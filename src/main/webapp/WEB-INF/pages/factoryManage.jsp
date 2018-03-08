@@ -79,7 +79,7 @@
                         </td>
                         <td style="width:80px">机组</td>
                         <td colspan="2" style="text-align: left">
-                            <input id="combobox2" class="mini-combobox" style="width:80%;" textField="text" valueField="id"
+                            <input id="combobox2" class="mini-combobox" style="width:80%;" textField="text" valueField="sid"
                                    url="text/team.txt"  showNullItem="false" required="true" allowInput="false"
                                    onvalidation="onComboValidation"/>
                         </td>
